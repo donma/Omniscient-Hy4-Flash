@@ -1,0 +1,35 @@
+/* ==========================================================================
+   T001 Luxury Bar — responsive.css
+   額外的裝置微調；主要 RWD 規則已内含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1280px)}
+  .cards{gap:18px}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.75}
+  .section-head h2{font-size:32px}
+  .page-hero{padding:150px 0 70px}
+  .hero h1{font-size:clamp(48px,15vw,90px)}
+  .menu-item{grid-template-columns:36px 1fr;gap:10px}
+  .menu-price{grid-column:2;margin-top:4px}
+  .stat b{font-size:34px}
+  .article p{font-size:15px}
+}
+
+@media (max-width: 420px){
+  .brand b{font-size:18px;letter-spacing:.16em}
+  .brand span{font-size:8px;letter-spacing:.3em}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .faq-q{font-size:16px}
+  .drawer{width:90%}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}

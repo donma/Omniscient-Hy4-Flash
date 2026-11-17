@@ -1,0 +1,16 @@
+{
+  "id": "template-013",
+  "name": "Beauty Studio",
+  "industryCategory": "美業・生活服務",
+  "industry": ["美容工作室", "美妝美業", "SPA 美容", "美甲美睫"],
+  "colors": ["奶油白", "腮紅粉", "灰玫瑰", "深褐", "奶茶色"],
+  "backgroundMode": "light",
+  "features": ["左右分割 Hero", "柔暖奶茶配色", "分割服務列", "好評浮動卡片", "預約表單", "表單假送出", "LINE 諮詢", "強 SEO", "圖片豐富", "FAQ 手風琴"],
+  "layout": ["左右分割 Split Layout", "soft-top-nav", "split-service-rows", "service-photo-split-pairs", "warm-soft-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

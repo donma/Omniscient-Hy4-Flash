@@ -1,0 +1,59 @@
+/* ==========================================================================
+   T003 Fashion Boutique — responsive.css
+   補充裝置微調；主要 RWD 規則已寫在 style.css 末尾。
+   ========================================================================== */
+
+@media (min-width: 1440px){
+  .wrap{width:min(84%,1360px)}
+  .hero-panel{padding-left:8%;padding-right:8%}
+}
+
+@media (max-width: 1180px){
+  .nav{gap:14px}
+  .nav a{font-size:9px;letter-spacing:.16em}
+  .nav-shop{font-size:9px;letter-spacing:.18em}
+  .brand{font-size:17px;letter-spacing:.26em}
+  .header-inner{gap:16px}
+}
+
+@media (max-width: 900px){
+  .hero-panel{padding-top:140px}
+  .hero-kicker{font-size:9px}
+  .section-head h2{font-size:clamp(34px,6.5vw,50px)}
+  .manifesto{font-size:clamp(26px,6vw,40px)}
+  .review{padding:36px 28px}
+  .review p{font-size:21px}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.8}
+  .page-hero{padding:140px 0 64px}
+  .page-hero h1{font-size:clamp(50px,13vw,88px)}
+  .page-hero p{font-size:14px}
+  .crumb{margin-bottom:18px}
+  .article p{font-size:15px}
+  .article h1,.article .article-title{font-size:clamp(40px,10vw,64px)}
+  .article .lead{font-size:20px}
+  .faq-q{font-size:20px;padding:24px 0}
+  .product-info h2{font-size:clamp(36px,9vw,54px)}
+  .collection-row{padding:20px 0}
+}
+
+@media (max-width: 420px){
+  .brand{font-size:15px;letter-spacing:.2em}
+  .drawer{width:88%}
+  .drawer nav a{font-size:19px}
+  .hero-desc{font-size:13px}
+  .text-link{font-size:11px}
+  .eyebrow{font-size:9px;letter-spacing:.32em}
+  .post h3{font-size:23px}
+  .size-row button{width:40px;height:40px}
+  .footer-links a{font-size:9px;letter-spacing:.18em}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .look-item img,.story-media img,.gallery img,.post-media img{transition:none}
+}

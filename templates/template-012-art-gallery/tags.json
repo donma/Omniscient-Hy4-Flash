@@ -1,0 +1,16 @@
+{
+  "id": "template-012",
+  "name": "Art Gallery",
+  "industryCategory": "藝術文化",
+  "industry": ["藝廊", "當代藝術", "活動組織", "美術館", "文化空間"],
+  "colors": ["深灰 #111111", "米白 #efede8", "陶土橘 #c4704a", "表面灰 #1c1c1c"],
+  "backgroundMode": "dark",
+  "features": ["固定左側導覽列", "美術館說明牌", "垂直字標", "左側抽屜選單", "展覽狀態標籤", "表單假送出", "強 SEO", "圖片豐富", "FAQ 手風琴", "回到頂部"],
+  "layout": ["Left Rail Navigation 左側導覽型", "vertical-left-rail", "left-rail-exhibition-hero", "exhibition-plate-grid", "programme-list", "rail-aligned-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

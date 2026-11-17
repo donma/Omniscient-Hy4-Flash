@@ -1,0 +1,18 @@
+# 工具與暫存檔（不推送）
+tools/
+
+# 巡邏 / 驗收暫存
+audit_out*.txt
+verify_out.txt
+verify_final.txt
+capture_out.txt
+suspect_detail.txt
+diag2_out.txt
+
+# Python 快取
+__pycache__/
+*.pyc
+
+# 系統檔
+.DS_Store
+Thumbs.db

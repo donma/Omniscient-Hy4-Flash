@@ -1,0 +1,16 @@
+{
+  "id": "template-023",
+  "name": "Coworking Space",
+  "industryCategory": "共同工作 / 辦公空間",
+  "industry": ["共享辦公室", "共用工作空間", "空間生活", "新創育成", "商務中心"],
+  "colors": ["#f7f8f9", "#eef0f2", "#3b5bdb", "#b8e04a", "#232936"],
+  "backgroundMode": "light",
+  "features": ["白灰開放空間 Bento Hero", "top-modern-nav", "membership-bento-cards", "space-bento-grid", "bento-tour-button", "modern-grid-footer", "grid-dots motif", "手機右側 drawer", "FAQ accordion", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Bento Grid 現代資訊版", "white-gray-open-space-bento-hero", "space-bento-grid", "membership-bento-cards", "modern-grid-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

@@ -1,0 +1,138 @@
+/* ==========================================================================
+   T011 Music Festival — Responsive rules
+   Desktop 2-4 columns / tablet max 2 / phone single column
+   ========================================================================== */
+
+/* ---------- Large desktop ---------- */
+@media(max-width:1180px){
+  .nav{gap:14px}
+  .nav a{font-size:12px}
+  .nav .nav-cta{padding:10px 15px;font-size:14px}
+  .lineup-grid{grid-template-columns:repeat(3,1fr)}
+  .artist-card.big{grid-column:span 2;grid-row:span 2}
+  .tier-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- Tablet ---------- */
+@media(max-width:960px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .header-inner{gap:12px}
+
+  .hero{padding:120px 0 110px}
+  .hero-title{font-size:clamp(64px,14vw,120px)}
+  .hero-slash{left:74%;width:80px}
+
+  .section{padding:78px 0}
+
+  .lineup-grid{grid-template-columns:repeat(2,1fr)}
+  .artist-card.big,.artist-card.wide{grid-column:span 2;grid-row:auto}
+  .artist-card.big .artist-media{aspect-ratio:16/10;min-height:0}
+
+  .schedule-grid{grid-template-columns:1fr 1fr}
+  .stage-col:last-child{grid-column:span 2}
+
+  .venue-band{grid-template-columns:1fr}
+  .venue-media{min-height:300px}
+  .venue-content{padding:52px 8%}
+
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:220px 200px 200px}
+  .gallery-grid figure:first-child{grid-column:span 2;grid-row:span 2}
+
+  .stats-band{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line-soft)}
+
+  .split{grid-template-columns:1fr}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:340px}
+
+  .cards,.posts{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:1fr}
+
+  .form-wrap,.contact-grid{grid-template-columns:1fr}
+
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-big{font-size:clamp(48px,11vw,110px)}
+}
+
+/* ---------- Phone ---------- */
+@media(max-width:640px){
+  body{line-height:1.75}
+  .wrap{width:90%}
+  .site-header{padding:14px 0}
+  .brand-mark{font-size:24px}
+  .brand-sub{font-size:8px;letter-spacing:.24em}
+
+  .hero{padding:118px 0 116px;min-height:92vh}
+  .hero-inner{padding-left:0}
+  .hero-title{font-size:clamp(58px,17vw,96px)}
+  .hero-title .fill{text-shadow:3px 3px 0 var(--magenta),5px 5px 0 rgba(124,58,237,.7)}
+  .hero-slash{display:none}
+  .hero-halftone{-webkit-mask-image:none;mask-image:none;opacity:.16}
+  .hero-block{display:block;width:100%;max-width:340px}
+  .hero-block .cell{border-right:0;border-bottom:1px solid var(--line)}
+  .hero-block .cell:last-child{border-bottom:0}
+  .hero-actions{gap:10px}
+  .hero-actions .btn{width:100%}
+  .ticker-track span{font-size:15px}
+
+  .section{padding:64px 0}
+  .section-head h2{font-size:clamp(36px,10vw,56px)}
+  .section-head,.section-head p{margin-bottom:16px}
+
+  .lineup-grid{grid-template-columns:1fr}
+  .artist-card.big,.artist-card.wide{grid-column:span 1}
+  .artist-name{font-size:36px}
+  .artist-card.big .artist-name{font-size:44px}
+
+  .day-tabs{gap:0}
+  .day-tab{padding:10px 16px;font-size:19px;flex:1}
+  .schedule-grid{grid-template-columns:1fr}
+  .stage-col:last-child{grid-column:span 1}
+
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,150px)}
+  .gallery-grid figure:first-child{grid-column:span 2;grid-row:span 2}
+
+  .stats-band{grid-template-columns:1fr 1fr}
+  .stat b{font-size:38px}
+
+  .cards,.posts,.tier-grid{grid-template-columns:1fr}
+  .tier-card.featured{order:-1}
+
+  .faq-q{font-size:15px;padding:17px 16px}
+  .faq-a p{padding:0 18px 18px}
+
+  .page-hero{padding:130px 0 64px}
+  .page-hero h1{font-size:clamp(46px,13vw,72px)}
+  .page-hero::before{width:34px;right:4%}
+
+  .article h1{font-size:clamp(34px,9vw,50px)}
+  .article p{font-size:15px}
+
+  .footer-big{font-size:clamp(40px,12vw,72px);white-space:normal;line-height:.9}
+  .footer-top{grid-template-columns:1fr}
+  .footer-news{flex-direction:column;align-items:stretch}
+  .news-form{max-width:none}
+  .news-form .btn{width:auto}
+
+  .float-ticket{font-size:15px;padding:14px 9px}
+  .to-top{right:12px;bottom:18px}
+}
+
+/* ---------- Small phone ---------- */
+@media(max-width:380px){
+  .hero-title{font-size:clamp(50px,16vw,72px)}
+  .hero-block .cell{padding:10px 18px}
+  .day-tab{font-size:16px;padding:9px 10px}
+  .tier-price{font-size:42px}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

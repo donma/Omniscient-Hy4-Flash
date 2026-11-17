@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOCTURNE 夜酌｜線上訂位</title>
+<meta name="description" content="透過 NOCTURNE 夜酌線上訂位，預約今晚的座位。簡單填寫姓名、電話、日期與人數，讓我們為你留一盞微光與一杯酒。">
+<link rel="canonical" href="https://example.com/template-001-luxury-bar/booking.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOCTURNE 夜酌｜線上訂位">
+<meta property="og:description" content="幾分鐘完成預約，把今晚交給我們。">
+<meta property="og:image" content="assets/img/preview.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="nav-left"><span>台北 · 大安</span><span>22:00 — 04:00</span></div>
+    <a class="brand" href="index.html"><b>NOCTURNE</b><span>夜 酌 · 餐 酒 館</span></a>
+    <nav class="nav" aria-label="主選單">
+      <a data-page="index.html" href="index.html">首頁</a>
+      <a data-page="about.html" href="about.html">品牌故事</a>
+      <a data-page="services.html" href="services.html">菜單料理</a>
+      <a data-page="portfolio.html" href="portfolio.html">空間環境</a>
+      <a data-page="blog.html" href="blog.html">酒吧誌</a>
+      <a class="nav-cta" data-page="booking.html" href="booking.html">立即訂位</a>
+    </nav>
+    <button class="nav-toggle" aria-label="開啟選單">☰</button>
+  </div>
+</header>
+<div class="overlay"></div>
+<aside class="drawer" aria-label="行動版選單">
+  <button class="drawer-close" aria-label="關閉選單">×</button>
+  <a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="services.html">菜單料理</a>
+  <a href="service-detail.html">調酒詳情</a><a href="portfolio.html">空間環境</a><a href="reviews.html">顧客評價</a>
+  <a href="faq.html">常見問題</a><a href="booking.html">線上訂位</a><a href="process.html">訂位流程</a>
+  <a href="blog.html">酒吧誌</a><a href="blog-detail.html">文章內容</a><a href="contact.html">聯絡我們</a>
+</aside>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-media"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1920&q=80" alt="溫暖燈光下等待客人的吧台與高腳椅"></div>
+    <div class="wrap page-hero-inner">
+      <div class="crumb">首頁 / 線上訂位</div>
+      <h1>線上訂位</h1>
+      <p>留一盞微光、一杯酒，還有一個剛好屬於你的位置。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Reservations</span>
+        <h2>今晚，<em>留個位置</em>給自己</h2>
+        <p>填寫以下資料，我們會盡快與你確認訂位。</p>
+      </div>
+      <div class="form-wrap reveal">
+        <div>
+          <span class="eyebrow">Good to Know</span>
+          <h2 class="serif" style="font-size:clamp(28px,4vw,40px);font-weight:500;margin:16px 0 22px">訂位須知</h2>
+          <div class="info-row"><i>◷</i><div><b>營業時間</b><span>每日 22:00 至 04:00，全年無休。</span></div></div>
+          <div class="info-row"><i>◷</i><div><b>保留時間</b><span>座位僅保留十分鐘，逾時將自動釋出。</span></div></div>
+          <div class="info-row"><i>◇</i><div><b>最低消費</b><span>每人低消為一杯飲品，無用餐時間限制。</span></div></div>
+          <div class="info-row"><i>◇</i><div><b>人數說明</b><span>線上訂位接受一至六人，六人以上請電話洽詢。</span></div></div>
+          <div class="info-row"><i>✎</i><div><b>特殊需求</b><span>慶生、包廂或過敏需求，請於備註中告知。</span></div></div>
+          <p class="form-note">完成訂位後，我們將以電話或訊息與你確認。此為示範表單，不會實際送出資料。</p>
+        </div>
+        <form data-fake-submit>
+          <div class="field"><label for="name">姓名</label><input type="text" id="name" name="name" placeholder="請輸入您的姓名" required></div>
+          <div class="field"><label for="phone">聯絡電話</label><input type="tel" id="phone" name="phone" placeholder="例如：0912-345-678" required></div>
+          <div class="field"><label for="date">訂位日期</label><input type="date" id="date" name="date" required></div>
+          <div class="field"><label for="time">訂位時間</label><select id="time" name="time" required><option value="">請選擇時間</option><option>22:00</option><option>22:30</option><option>23:00</option><option>23:30</option><option>00:00</option><option>00:30</option><option>01:00</option><option>01:30</option><option>02:00</option><option>02:30</option><option>03:00</option></select></div>
+          <div class="field"><label for="guests">人數</label><select id="guests" name="guests" required><option value="">請選擇人數</option><option>1 位</option><option>2 位</option><option>3 位</option><option>4 位</option><option>5 位</option><option>6 位</option><option>六人以上（電話洽詢）</option></select></div>
+          <div class="field"><label for="note">備註</label><textarea id="note" name="note" placeholder="慶生、過敏、座位偏好或其他需求，歡迎告訴我們"></textarea></div>
+          <button class="btn btn-gold" type="submit">送出訂位 →</button>
+          <div class="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap split flip">
+      <div class="split-media reveal"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="舒適的室內座位區，燈光溫暖而柔和"></div>
+      <div class="split-content reveal">
+        <span class="eyebrow">Your Evening</span>
+        <h2>從填表到<em>入座</em></h2>
+        <p>只要幾個簡單步驟，一個美好的夜晚就開始了。送出訂位後，我們會盡快與你確認，並為你準備好座位與酒單。</p>
+        <p>想更了解流程？我們把每一個步驟都寫清楚了，讓你放心把今晚交給我們。</p>
+        <a class="btn btn-outline" href="process.html">查看訂位流程 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center reveal"><span class="eyebrow">Choose Your Spot</span><h2>今晚，<em>坐哪裡</em>？</h2></div>
+      <div class="collage reveal">
+        <figure><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" alt="咖啡館風格的精緻座位，適合悠閒坐上一晚"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="低光源精品酒吧的吧台與暖色燈光"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80" alt="調酒師正在準備一杯層次豐富的雞尾酒"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="narrow tc reveal">
+      <div class="quote-mark">“</div>
+      <p class="quote">把今晚交給我們，<br>你只管帶著好心情來。</p>
+      <div class="quote-by">— NOCTURNE 訂位團隊</div>
+    </div>
+  </section>
+</main>
+
+<div class="to-top" aria-label="回到頂部">↑</div>
+<div class="reserve-bar"><div class="wrap reserve-inner"><p>今晚，留一個位置給自己。<b> 02-2700-1234</b></p><a class="btn btn-gold btn-sm" href="booking.html">立即訂位 →</a></div></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><b>NOCTURNE</b><p>夜酌餐酒館。在城市的一角，為每一個不願早睡的靈魂，保留一盞微光。</p><div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="Line">LINE</a></div></div>
+      <div class="footer-col"><h4>探索</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="services.html">菜單料理</a></li><li><a href="portfolio.html">空間環境</a></li><li><a href="blog.html">酒吧誌</a></li></ul></div>
+      <div class="footer-col"><h4>服務</h4><ul><li><a href="booking.html">線上訂位</a></li><li><a href="process.html">訂位流程</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+      <div class="footer-col"><h4>造訪</h4><ul><li>台北市大安區</li><li>忠孝東路四段 100 號</li><li>22:00 — 04:00</li><li>02-2700-1234</li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 NOCTURNE 夜酌 · 照片僅供設計示意 · 理性飲酒，開車不喝酒</div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

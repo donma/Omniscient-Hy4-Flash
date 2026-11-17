@@ -1,0 +1,68 @@
+/* ==========================================================================
+   T013 Beauty Studio — responsive.css
+   額外裝置微調；主要 RWD 規則亦内含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .wrap{width:min(92%,1280px)}
+  .nav{gap:16px}
+  .nav a{font-size:12px}
+  .hero-panel{padding:70px clamp(26px,5vw,60px)}
+  .service-row{gap:36px}
+}
+
+@media (max-width: 1024px){
+  .quotes,.posts,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2)::after{display:none}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+  .trust-band{grid-template-columns:repeat(2,1fr);gap:24px}
+}
+
+@media (max-width: 860px){
+  .nav{display:none}
+  .nav-toggle{display:flex}
+  .hero{grid-template-columns:1fr}
+  .hero-panel{min-height:auto;padding:70px 8%}
+  .hero-photo{min-height:420px;border-radius:0;border-top-left-radius:0;border-top-right-radius:var(--radius-lg);border-bottom-left-radius:var(--radius-lg)}
+  .rating-card{left:22px;bottom:24px}
+  .service-row,.story-split,.form-wrap,.contact-grid{grid-template-columns:1fr}
+  .service-row.flip .service-media{order:0}
+  .service-media{aspect-ratio:16/11}
+  .story-media{min-height:360px}
+  .story-body{padding:44px 28px}
+  .section{padding:80px 0}
+  .page-hero{padding:80px 0 60px}
+  .form-aside,.form-card{padding:28px}
+}
+
+@media (max-width: 640px){
+  .quotes,.posts,.price-grid,.steps,.soft-grid,.field-row{grid-template-columns:1fr}
+  .step::after{display:none!important}
+  .hero h1{font-size:clamp(46px,13vw,68px)}
+  .hero-actions{gap:18px}
+  .hero-actions .btn{width:100%}
+  .trust-item b{font-size:32px}
+  .footer-top{grid-template-columns:1fr}
+  .section-head h2{font-size:32px}
+  .article p{font-size:15px}
+  .article blockquote{font-size:18px}
+  .drawer{width:88%}
+  .brand-sub{display:none}
+  .newsletter{max-width:100%}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

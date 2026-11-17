@@ -1,0 +1,16 @@
+{
+  "id": "template-001",
+  "name": "Luxury Bar",
+  "industryCategory": "酒吧 / 餐酒館 / 夜生活",
+  "industry": ["餐酒館", "精品酒吧", "夜生活", "調酒", "精品餐飲"],
+  "colors": ["black", "gold", "champagne", "candle-lit", "low-light"],
+  "backgroundMode": "dark",
+  "features": ["全螢幕氛圍 Hero", "置中字標導覽", "編輯式酒單排版", "三空間拼貼", "黑金低光源美學", "固定訂位列", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Fullscreen Hero / Editorial Menu Grid", "fullscreen-atmosphere-hero", "editorial-menu-grid", "centered-wordmark-nav", "collage-gallery", "fixed-reservation-bar"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

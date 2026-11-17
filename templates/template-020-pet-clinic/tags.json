@@ -1,0 +1,16 @@
+{
+  "id": "template-020",
+  "name": "Pet Clinic",
+  "industryCategory": "寵物 / 動物醫療",
+  "industry": ["動物醫院", "寵物診所", "寵物美容", "寵物服務", "獸醫醫療", "24H 急診"],
+  "colors": ["warm-white", "friendly-green", "soft-cream", "deep-green-text", "paw-motif"],
+  "backgroundMode": "light",
+  "features": ["白綠暖調 Split Hero", "浮動門診狀態卡與肉墊徽章", "service-split-rows 交替服務列", "pet-care-service-cards 照護卡片", "醫師團隊與設施畫廊", "24H 急診綠色 CTA 帶", "暖綠 Footer 與肉墊分隔", "手機右側 drawer", "FAQ 手風琴", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Split Trust 專業信任型", "white-green-warm-split-hero", "top-booking-nav", "service-split-rows", "pet-care-service-cards", "warm-green-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

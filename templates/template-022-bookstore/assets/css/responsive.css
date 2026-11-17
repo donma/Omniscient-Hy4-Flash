@@ -1,0 +1,51 @@
+/* ==========================================================================
+   T022 Bookstore — responsive.css
+   額外裝置微調；主要 RWD 規則已內含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1280px)}
+  .posts,.testimonials{gap:18px}
+  .shelf{gap:18px}
+}
+
+@media (max-width: 768px){
+  body{font-size:14px;line-height:1.8}
+  .section-head h2{font-size:30px}
+  .page-hero{padding:90px 0 56px}
+  .hero h1{font-size:clamp(36px,11vw,58px)}
+  .hero-desc{font-size:15px}
+  .shelf-row{grid-template-columns:40px 1fr;gap:12px}
+  .shelf-row .row-count,.shelf-row .row-link{grid-column:2;justify-self:start}
+  .stat b{font-size:30px}
+  .article p{font-size:15px}
+  .article h2{font-size:24px}
+  .form-aside h2{font-size:25px}
+}
+
+@media (max-width: 480px){
+  .brand b{font-size:18px;letter-spacing:.12em}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn,.hero-search{width:100%}
+  .hero-search{flex-wrap:wrap}
+  .faq-q{font-size:16px}
+  .drawer{width:90%}
+  .event-date b{font-size:28px}
+  .bookmark{width:18px;height:22px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  body::before{display:none}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

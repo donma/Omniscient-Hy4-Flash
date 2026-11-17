@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全職設計視角｜24 套專業網站樣板展示</title>
+  <meta name="description" content="全職設計視角提供 24 套完整且獨一無二的網站樣板，每套 12 頁、風格一致、圖片豐富，可依產業、配色與版型篩選，供設計師與接案工作者直接修改交付。">
+  <link rel="canonical" href="https://example.com/fullsite-template-gallery/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="全職設計視角｜24 套專業網站樣板展示">
+  <meta property="og:description" content="24 套獨一無二的完整網站樣板，每套 12 頁，可依產業、配色與版型篩選。">
+  <meta property="og:image" content="assets/img/previews/template-001.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+<body>
+
+  <header class="g-header">
+    <div class="container g-header-inner">
+      <a class="g-brand" href="index.html" aria-label="全職設計視角首頁">
+        <span class="g-brand-mark">視</span>
+        <span class="g-brand-text"><strong>全職設計視角</strong><span>Full-Site Design Perspective</span></span>
+      </a>
+      <nav class="g-nav" id="g-nav" aria-label="主選單">
+        <a class="active" href="index.html">首頁</a>
+        <a href="#gallery">瀏覽樣板</a>
+        <a href="#filter-industry">產業分類</a>
+        <a href="#filter-layout">版型分類</a>
+        <a href="#filter-bg">配色分類</a>
+        <a href="#usage">使用說明</a>
+        <a href="#about">關於我們</a>
+      </nav>
+      <a class="g-header-cta" href="#gallery">開始瀏覽 →</a>
+      <button class="g-menu-toggle" id="g-menu-toggle" aria-label="開啟選單">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="g-hero">
+      <div class="container g-hero-inner">
+        <div>
+          <span class="g-eyebrow">24 套完整網站樣板 · 288 頁作品級交付</span>
+          <h1>不是下載一個首頁，<br>而是<em>一整套</em>可交付的網站。</h1>
+          <p class="g-hero-lead">每套皆為獨立設計的 12 頁完整網站，具備專屬版型、中文選單、完整 SEO、豐富圖片與可修改的原始碼。為設計師、接案工作者與網站製作團隊打造。</p>
+          <div class="g-hero-actions">
+            <a class="g-btn g-btn-primary" href="#gallery">瀏覽 24 套樣板 →</a>
+            <a class="g-btn g-btn-ghost" href="#usage">查看使用說明</a>
+          </div>
+        </div>
+        <div class="g-hero-art" aria-hidden="true">
+          <figure><img src="assets/img/previews/template-001.jpg" alt=""></figure>
+          <figure><img src="assets/img/previews/template-006.jpg" alt=""></figure>
+          <figure><img src="assets/img/previews/template-013.jpg" alt=""></figure>
+          <figure><img src="assets/img/previews/template-019.jpg" alt=""></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-stats" id="about" aria-label="專案統計">
+      <div class="g-stat"><b>24</b><span>套獨立樣板</span></div>
+      <div class="g-stat"><b>288</b><span>完整 HTML 頁面</span></div>
+      <div class="g-stat"><b>12 / 12</b><span>深色 / 淺色底</span></div>
+      <div class="g-stat"><b>14+</b><span>產業分類</span></div>
+    </section>
+
+    <section class="g-hot" aria-label="熱門標籤">
+      <div class="container g-hot-inner" id="hot-tags"></div>
+    </section>
+
+    <section class="container g-layout" id="gallery">
+      <aside class="g-sidebar" aria-label="篩選區">
+        <div class="g-filter-group">
+          <div class="g-filter-title">產業分類</div>
+          <div class="g-filter-options" id="filter-industry"></div>
+        </div>
+        <div class="g-filter-group">
+          <div class="g-filter-title">背景模式</div>
+          <div class="g-filter-options" id="filter-bg"></div>
+        </div>
+        <div class="g-filter-group">
+          <div class="g-filter-title">版型類型</div>
+          <div class="g-filter-options" id="filter-layout"></div>
+        </div>
+      </aside>
+
+      <div class="g-content">
+        <div class="g-toolbar">
+          <div class="g-toolbar-left">
+            <h2>樣板庫</h2>
+            <p id="g-result-count">載入中…</p>
+          </div>
+          <div class="g-toolbar-right">
+            <label class="g-search">
+              <span aria-hidden="true">⌕</span>
+              <input id="g-search-input" type="search" placeholder="搜尋樣板、產業、標籤…" aria-label="搜尋樣板">
+            </label>
+            <div class="g-view-toggle" role="group" aria-label="檢視模式">
+              <button id="view-grid" class="active" title="格狀檢視" aria-label="格狀檢視">▦</button>
+              <button id="view-list" title="清單檢視" aria-label="清單檢視">☰</button>
+            </div>
+          </div>
+        </div>
+        <div class="g-grid" id="g-grid"></div>
+      </div>
+    </section>
+
+    <section id="usage" class="g-detail" style="padding-top:0">
+      <div class="container">
+        <div class="g-detail-section" style="margin-top:0">
+          <h2>使用說明</h2>
+          <p class="g-note">直接雙擊開啟任一 <code>templates/template-xxx/index.html</code> 即可在瀏覽器預覽，無需安裝或建置環境。設計師可修改各樣板內的 <code>assets/css/style.css</code>、<code>assets/js/main.js</code> 與 12 個 HTML 頁面。每套樣板皆附 <code>prompt.md</code>、<code>tags.json</code>、<code>template.json</code>、<code>README.md</code> 與圖片來源紀錄。所有選單皆為繁體中文，手機版附漢堡選單。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="g-footer">
+    <div class="container">
+      <div class="g-footer-grid">
+        <div>
+          <h4>全職設計視角</h4>
+          <p>24 套作品的設計展示系統。每套都是一個行業的精華，不是量產模板，而是可參賽、可展示、可交付的作品級樣板庫。</p>
+        </div>
+        <div>
+          <h4>快速連結</h4>
+          <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="#gallery">瀏覽樣板</a></li>
+            <li><a href="template-detail.html?id=template-001">範例詳情</a></li>
+            <li><a href="README.md">專案說明</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>生成資訊</h4>
+          <p>Model：Hy4 flash Free (opencode-go)<br>Date：2026-11-17<br>288 頁 · 純前端靜態網站</p>
+        </div>
+      </div>
+      <div class="g-footer-bottom">© 2026 全職設計視角 · 圖片僅供設計示意，正式交付前請替換為客戶自有或授權圖片。</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

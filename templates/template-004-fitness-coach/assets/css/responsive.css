@@ -1,0 +1,67 @@
+/* ==========================================================================
+   T004 Fitness Coach — responsive.css
+   裝置微調；主要 RWD 規則已內含於 style.css 結構。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .nav{gap:14px}
+  .nav a{font-size:14px}
+  .hero h1{font-size:clamp(56px,9vw,110px)}
+  .hero-stats{gap:24px}
+  .mini-stat b{font-size:38px}
+}
+
+@media (max-width: 980px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .hero-media{inset:0 0 0 44%}
+  .hero-panel{width:70%;padding-top:150px}
+  .tier-grid,.coach-grid,.review-grid,.posts{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:repeat(2,1fr)}
+  .split-media{min-height:440px}
+}
+
+@media (max-width: 760px){
+  .section{padding:72px 0}
+  .hero{min-height:auto}
+  .hero-media{position:relative;inset:auto;width:100%;height:42vh;order:1}
+  .hero-media::before{background:linear-gradient(to bottom,rgba(12,13,15,.1),rgba(12,13,15,.7))}
+  .hero-slash{display:none}
+  .hero-panel{order:2;width:100%;padding:50px 8% 70px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+  .hero-panel::before{content:"";position:absolute;top:-40px;left:0;right:0;height:80px;background:var(--ink);clip-path:polygon(0 40px,100% 0,100% 100%,0 100%)}
+  .hero h1{font-size:clamp(58px,16vw,104px)}
+  .hero-stats{gap:20px;margin-top:36px}
+  .mini-stat b{font-size:34px}
+  .split{grid-template-columns:1fr}
+  .split-media{min-height:320px;clip-path:polygon(0 0,100% 0,100% 100%,0 92%)}
+  .split-content{padding:56px 8%}
+  .form-wrap,.contact-grid{grid-template-columns:1fr}
+  .ba-grid{gap:16px}
+  .transformation{padding:10px}
+  .article h1{font-size:clamp(38px,10vw,60px)}
+}
+
+@media (max-width: 560px){
+  .wrap{width:91%}
+  .brand{font-size:26px}
+  .brand-slash{height:26px;width:9px}
+  .tier-grid,.coach-grid,.review-grid,.posts,.stats-band,.footer-top{grid-template-columns:1fr}
+  .stats-band .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .ba-pair{grid-template-columns:1fr 1fr;gap:4px}
+  .ba-label{font-size:14px;padding:4px 8px}
+  .ba-caption{font-size:17px}
+  .section-head h2{font-size:clamp(36px,11vw,54px)}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .cta-inner{flex-direction:column;align-items:flex-start}
+  .cta-panel .btn{width:100%}
+  .field-row{grid-template-columns:1fr}
+  .footer-big{font-size:clamp(56px,17vw,100px)}
+  .faq-q{font-size:20px}
+  .page-hero{padding:140px 0 64px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}

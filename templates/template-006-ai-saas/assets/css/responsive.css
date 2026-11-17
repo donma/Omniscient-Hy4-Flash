@@ -1,0 +1,88 @@
+/* ==========================================================================
+   T006 AI SaaS — responsive.css
+   裝置微調。Bento 格線在平板最多 2 欄、手機全單欄。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .nav-links a{padding:8px 10px;font-size:12px}
+  .feature-bento,.case-bento{grid-auto-rows:170px}
+  .int-big-grid{grid-template-columns:repeat(3,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width: 980px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .nav-actions .btn-gradient{display:none}
+  .hero{padding-top:150px}
+  .section{padding:84px 0}
+  .bento-showcase{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .tile-ui{grid-column:span 2;grid-row:span 2}
+  .tile-chart{grid-column:span 1;grid-row:span 2}
+  .tile-testimonial{grid-column:span 2;grid-row:span 1}
+  .feature-bento{grid-template-columns:repeat(2,1fr)}
+  .feature-tile.big{grid-column:span 2;grid-row:span 2}
+  .steps-grid,.testi-grid,.pricing-grid,.posts,.value-grid,.stats-band{grid-template-columns:repeat(2,1fr)}
+  .case-bento{grid-template-columns:repeat(2,1fr)}
+  .case-tile.big,.case-tile.wide{grid-column:span 2;grid-row:span 1}
+  .split,.contact-grid{grid-template-columns:1fr}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:320px}
+  .footer-top{grid-template-columns:repeat(2,1fr);gap:34px}
+}
+
+@media (max-width: 720px){
+  .wrap{width:min(92%,1240px)}
+  .hero h1{font-size:clamp(38px,10vw,62px)}
+  .hero-sub{font-size:15px}
+  .bento-showcase{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;gap:10px}
+  .tile{padding:16px}
+  .tile-ui{padding:0}
+  .tile-testimonial .quote{font-size:13px}
+  .section-head h2{font-size:clamp(28px,7vw,38px)}
+  .steps-grid,.testi-grid,.pricing-grid,.posts,.value-grid,.stats-band,.int-big-grid,.team-grid{grid-template-columns:1fr}
+  .feature-bento,.case-bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .feature-tile.big{grid-column:span 1;grid-row:span 1;min-height:280px}
+  .feature-tile{min-height:180px}
+  .case-tile.big,.case-tile.wide{grid-column:span 1;grid-row:span 1;min-height:260px}
+  .case-tile{min-height:220px}
+  .price-card.featured{transform:none}
+  .footer-top{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr;gap:0}
+  .cta-band{padding:54px 24px}
+  .newsletter .nf{flex-direction:column}
+  .to-top{right:16px;bottom:16px;width:42px;height:42px}
+}
+
+@media (max-width: 480px){
+  .site-header{padding:12px 0}
+  .nav-pill{padding:6px 6px 6px 16px}
+  .brand-name{font-size:16px}
+  .hero{padding-top:132px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .bento-showcase{grid-template-columns:1fr;grid-auto-rows:auto}
+  .tile-ui,.tile-chart,.tile-testimonial{grid-column:span 1;grid-row:span 1;min-height:220px}
+  .tile-stat,.tile-avatars,.tile-integration{min-height:130px}
+  .tile-chart .chart-wrap{height:100px}
+  .logos{gap:20px 30px}
+  .logos span{font-size:17px}
+  .faq-q{font-size:15px}
+  .faq-a p{padding-right:0}
+  .brand-mark{width:26px;height:26px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .orb{animation:none}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

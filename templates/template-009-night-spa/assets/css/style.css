@@ -1,0 +1,406 @@
+/* ==========================================================================
+   T009 Night Spa — "AURORA SPA 極光療癒"
+   深綠療癒 · 高端 Spa · Fullscreen Visual 沉浸視覺型
+
+   Design language: deep green-black serenity, soft sage + warm candle,
+   very light italic serif display, airy letter spacing, thin delicate lines,
+   slow calm motion, generous negative space.
+   NO gold bling, NO sharp angles, NO high-contrast aggression.
+
+   This template is NOT a generic three-card theme. Its nav lives at the
+   bottom of the hero on home (a translucent pill), rituals are a calm
+   numbered step-list, gallery cards are tall and soft, and the footer is
+   a centered lotus-ripple composition.
+   ========================================================================== */
+
+:root{
+  --bg:#08110e;
+  --bg-2:#0b1713;
+  --surface:#0e1f19;
+  --surface-2:#12271f;
+  --line:rgba(159,201,180,.16);
+  --line-soft:rgba(159,201,180,.09);
+  --sage:#9fc9b4;
+  --sage-2:#c8e0d2;
+  --candle:#e8d9b8;
+  --text:#eef4ef;
+  --muted:#a9bfb4;
+  --faint:#748e82;
+  --serif:"Cormorant Garamond","Noto Sans TC",Georgia,serif;
+  --sans:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  overflow-x:hidden;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--sage);color:var(--bg)}
+
+.wrap{width:min(88%,1280px);margin-inline:auto}
+.narrow{width:min(90%,820px);margin-inline:auto}
+.tc{text-align:center}
+.serif{font-family:var(--serif)}
+.muted{color:var(--muted)}
+.faint{color:var(--faint)}
+.sage{color:var(--sage)}
+.candle{color:var(--candle)}
+
+.eyebrow{font-size:11px;letter-spacing:.4em;color:var(--sage);text-transform:uppercase;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--sage);opacity:.6}
+.tc .eyebrow::before{display:none}
+
+/* --------------------------------------------------------------------------
+   Header / Navigation
+   Home: translucent centered pill at the BOTTOM of the hero.
+   Inner pages: fixed, minimal, at the TOP.
+   -------------------------------------------------------------------------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:60;padding:22px 0;transition:background .5s ease,padding .5s ease,border-color .5s ease;border-bottom:1px solid transparent}
+.site-header.solid{background:rgba(8,17,14,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:13px 0;border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;position:relative}
+
+.brand{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand-en{font-family:var(--serif);font-style:italic;font-size:25px;letter-spacing:.16em;color:var(--text)}
+.brand-zh{font-size:9px;letter-spacing:.5em;color:var(--sage);margin-top:5px}
+
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{font-size:12.5px;letter-spacing:.08em;color:var(--muted);position:relative;transition:color .35s ease}
+.nav a:hover,.nav a.active,.nav a:focus-visible{color:var(--sage-2)}
+.nav a::after{content:"";position:absolute;left:50%;right:50%;bottom:-9px;height:1px;background:var(--sage);transition:all .35s ease}
+.nav a:hover::after,.nav a.active::after{left:0;right:0}
+.nav .nav-cta{padding:9px 18px;border:1px solid var(--line);border-radius:30px;color:var(--candle)}
+.nav .nav-cta::after{display:none}
+.nav .nav-cta:hover{border-color:var(--candle);background:rgba(232,217,184,.07)}
+.nav .nav-lang{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--faint);letter-spacing:.1em}
+.nav .nav-lang::after{display:none}
+.nav-toggle{display:none;background:none;border:0;color:var(--sage);font-size:22px;padding:4px 6px;line-height:1}
+
+/* Home variant: nav becomes a soft pill anchored to the bottom of the hero */
+body.home .site-header{position:absolute;top:auto;bottom:30px;background:none;border:0;padding:0}
+body.home .header-inner{justify-content:center}
+body.home .brand{display:none}
+body.home .nav{background:rgba(14,31,25,.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:40px;padding:12px 26px;gap:24px;box-shadow:0 10px 40px rgba(0,0,0,.28)}
+body.home .nav a{font-size:12px}
+body.home .nav-toggle{position:absolute;right:0}
+
+/* Drawer (LEFT side) */
+.overlay{position:fixed;inset:0;background:rgba(2,7,5,.7);z-index:70;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(86%,340px);background:linear-gradient(160deg,var(--surface),var(--bg));border-right:1px solid var(--line);z-index:80;transform:translateX(-100%);transition:transform .45s cubic-bezier(.22,.61,.36,1);padding:78px 30px 40px;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.drawer .drawer-label{font-size:10px;letter-spacing:.4em;color:var(--faint);text-transform:uppercase;margin:14px 0 6px}
+.drawer a{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--text);padding:9px 0;border-bottom:1px solid var(--line-soft);transition:color .3s,padding-left .3s}
+.drawer a:hover,.drawer a.active{color:var(--sage);padding-left:8px}
+.drawer-close{position:absolute;top:20px;right:22px;font-size:28px;background:none;border:0;color:var(--sage);line-height:1}
+.drawer .drawer-foot{margin-top:auto;font-size:11px;letter-spacing:.16em;color:var(--faint);padding-top:24px}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 34px;font-size:13px;letter-spacing:.16em;border-radius:40px;border:1px solid transparent;transition:all .4s ease;white-space:nowrap;font-weight:300}
+.btn-soft{background:rgba(159,201,180,.12);border-color:rgba(159,201,180,.45);color:var(--sage-2);backdrop-filter:blur(4px)}
+.btn-soft:hover{background:rgba(159,201,180,.22);border-color:var(--sage);transform:translateY(-3px);box-shadow:0 12px 34px rgba(159,201,180,.12)}
+.btn-outline{border-color:var(--line);color:var(--candle)}
+.btn-outline:hover{border-color:var(--candle);background:rgba(232,217,184,.06);transform:translateY(-3px)}
+.btn-candle{background:var(--candle);color:var(--bg)}
+.btn-candle:hover{background:#f4e8cf;transform:translateY(-3px)}
+.btn-sm{padding:10px 22px;font-size:12px}
+
+/* --------------------------------------------------------------------------
+   Hero — fullscreen serene visual
+   -------------------------------------------------------------------------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(.7) hue-rotate(18deg)}
+.hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(8,17,14,.18) 0%,rgba(8,17,14,.72) 74%,rgba(8,17,14,.96) 100%),linear-gradient(to bottom,rgba(8,17,14,.55),transparent 34%,rgba(8,17,14,.92))}
+
+/* soft concentric ripple motif */
+.ripple{position:absolute;z-index:0;left:50%;top:46%;transform:translate(-50%,-50%);width:min(78vw,720px);aspect-ratio:1;pointer-events:none;opacity:.5}
+.ripple span{position:absolute;inset:0;border:1px solid rgba(159,201,180,.16);border-radius:50%;animation:breathe 9s ease-in-out infinite}
+.ripple span:nth-child(2){inset:12%;animation-delay:1s}
+.ripple span:nth-child(3){inset:24%;animation-delay:2s}
+.ripple span:nth-child(4){inset:36%;animation-delay:3s}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.04);opacity:.8}}
+
+/* drifting petals / motes */
+.petals{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.petal{position:absolute;top:-8%;width:6px;height:6px;border-radius:50% 0 50% 50%;background:rgba(232,217,184,.5);filter:blur(.4px);animation:drift linear infinite;opacity:0}
+.petal:nth-child(1){left:14%;animation-duration:18s;animation-delay:0s}
+.petal:nth-child(2){left:32%;width:4px;height:4px;animation-duration:23s;animation-delay:4s}
+.petal:nth-child(3){left:58%;animation-duration:20s;animation-delay:8s}
+.petal:nth-child(4){left:76%;width:5px;height:5px;animation-duration:26s;animation-delay:2s}
+.petal:nth-child(5){left:88%;width:3px;height:3px;animation-duration:22s;animation-delay:11s}
+.petal:nth-child(6){left:46%;width:4px;height:4px;animation-duration:28s;animation-delay:14s}
+@keyframes drift{0%{transform:translate3d(0,-10vh,0) rotate(0);opacity:0}10%{opacity:.7}90%{opacity:.5}100%{transform:translate3d(40px,110vh,0) rotate(220deg);opacity:0}}
+
+.hero-inner{position:relative;z-index:2;padding:140px 20px 180px;max-width:900px;animation:heroRise 1.6s cubic-bezier(.22,.61,.36,1) both}
+@keyframes heroRise{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}
+.hero-kicker{font-size:11px;letter-spacing:.5em;color:var(--candle);margin-bottom:30px;opacity:.9}
+.hero h1{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(58px,11vw,132px);letter-spacing:.04em;margin:0;line-height:1;text-shadow:0 6px 40px rgba(0,0,0,.45)}
+.hero-line{width:1px;height:58px;background:linear-gradient(var(--sage),transparent);margin:32px auto 26px}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.4vw,23px);color:var(--sage-2);margin:0 auto;max-width:620px;line-height:1.7}
+.hero-desc{color:var(--muted);font-size:13px;letter-spacing:.1em;margin:18px auto 0;max-width:520px}
+.hero-actions{margin-top:40px}
+
+/* --------------------------------------------------------------------------
+   Section rhythm
+   -------------------------------------------------------------------------- */
+.section{padding:120px 0;position:relative}
+.section-tint{background:var(--bg-2)}
+.section-head{max-width:640px;margin-bottom:56px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head h2{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(34px,5vw,54px);margin:20px 0 18px;line-height:1.25}
+.section-head h2 em{color:var(--sage)}
+.section-head p{color:var(--muted);font-size:15px;margin:0}
+.rule-sage{width:54px;height:1px;background:var(--sage);margin:26px 0;opacity:.75}
+.tc .rule-sage{margin-inline:auto}
+
+/* Philosophy quote block */
+.quote-block{position:relative}
+.quote-mark{font-family:var(--serif);font-size:96px;color:var(--sage);line-height:.4;opacity:.35}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,4vw,44px);line-height:1.55;max-width:900px;margin:26px auto 0;text-align:center;color:var(--text);font-weight:300}
+.quote-by{text-align:center;color:var(--faint);font-size:12px;letter-spacing:.28em;margin-top:34px}
+
+/* --------------------------------------------------------------------------
+   Ritual step list — services
+   -------------------------------------------------------------------------- */
+.ritual-list{border-top:1px solid var(--line-soft)}
+.ritual{display:grid;grid-template-columns:64px 60px 1fr auto;gap:22px;align-items:start;padding:34px 8px;border-bottom:1px solid var(--line-soft);transition:background .4s ease,padding .4s ease}
+.ritual:hover{background:rgba(159,201,180,.035);padding-left:18px}
+.ritual-num{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--sage);opacity:.75;line-height:1}
+.ritual-icon{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--candle);font-family:var(--serif);font-style:italic;font-size:20px;background:rgba(159,201,180,.04)}
+.ritual-body h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:25px;margin:0 0 4px}
+.ritual-meta{font-size:11px;letter-spacing:.18em;color:var(--faint);margin-bottom:12px}
+.ritual-meta span{color:var(--sage)}
+.ritual-desc{font-size:13.5px;color:var(--muted);margin:0;max-width:680px;line-height:1.85}
+.ritual-price{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--candle);white-space:nowrap;padding-top:4px}
+
+/* --------------------------------------------------------------------------
+   Ambient gallery / ritual-card-soft-grid
+   -------------------------------------------------------------------------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.gallery-item{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:4/5}
+.gallery-item.tall{aspect-ratio:3/5}
+.gallery-item img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) hue-rotate(12deg);transition:transform 1.1s cubic-bezier(.22,.61,.36,1),filter .6s}
+.gallery-item:hover img{transform:scale(1.06);filter:saturate(.95) hue-rotate(8deg)}
+.gallery-item::after{content:"";position:absolute;inset:0;border-radius:18px;box-shadow:inset 0 0 80px 20px rgba(8,17,14,.5);pointer-events:none}
+.gallery-cap{position:absolute;left:26px;bottom:24px;z-index:2;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--text);text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.gallery-cap small{display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.28em;color:var(--sage-2);margin-bottom:6px}
+
+/* generic soft cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;transition:transform .45s ease,border-color .45s ease}
+.card:hover{transform:translateY(-8px);border-color:var(--line)}
+.card-media{aspect-ratio:4/3;overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) hue-rotate(12deg);transition:transform .8s ease}
+.card:hover .card-media img{transform:scale(1.05)}
+.card-body{padding:26px}
+.card-body h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:24px;margin:0 0 10px}
+.card-body p{font-size:13px;color:var(--muted);margin:0 0 16px}
+.card-tag{font-size:10px;letter-spacing:.22em;color:var(--sage);text-transform:uppercase}
+.read-link{font-size:12px;color:var(--candle);letter-spacing:.12em;border-bottom:1px solid rgba(232,217,184,.4);padding-bottom:4px}
+
+/* split (therapist / about) */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:18px;overflow:hidden}
+.split-media{position:relative;min-height:540px;overflow:hidden}
+.split-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) hue-rotate(12deg)}
+.split-media::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px 30px rgba(8,17,14,.6)}
+.split-content{padding:78px 9%;display:flex;flex-direction:column;justify-content:center;background:var(--surface);border:1px solid var(--line-soft);border-left:0}
+.split.flip .split-media{order:2}
+.split.flip .split-content{border-left:1px solid var(--line-soft);border-right:0}
+.split-content h2{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(32px,4vw,48px);margin:18px 0 22px;line-height:1.25}
+.split-content p{color:var(--muted);font-size:14px;margin:0 0 18px}
+.split-content .btn{margin-top:14px;align-self:flex-start}
+.therapist-sign{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--candle);margin-top:24px}
+
+/* testimonials */
+.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;padding:38px 30px;position:relative}
+.testimonial .qmark{font-family:var(--serif);font-size:60px;color:var(--sage);line-height:.4;opacity:.4}
+.testimonial .stars{color:var(--candle);letter-spacing:.3em;font-size:13px;margin:18px 0}
+.testimonial p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.7;color:var(--text);margin:0 0 22px}
+.testimonial cite{font-style:normal;font-size:11px;letter-spacing:.16em;color:var(--faint)}
+.testimonial cite b{color:var(--sage);font-weight:400}
+
+/* --------------------------------------------------------------------------
+   FAQ accordion
+   -------------------------------------------------------------------------- */
+.faq{max-width:840px;margin-inline:auto}
+.faq-item{border-bottom:1px solid var(--line-soft)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:var(--text);font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400;padding:26px 4px}
+.faq-q i{color:var(--sage);font-style:normal;font-size:26px;font-family:var(--sans);font-weight:300;transition:transform .4s ease}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,.61,.36,1)}
+.faq-item.open .faq-a{max-height:340px}
+.faq-a p{color:var(--muted);font-size:14px;margin:0 0 28px;padding-right:50px;line-height:1.9}
+
+/* --------------------------------------------------------------------------
+   Soft centered booking CTA
+   -------------------------------------------------------------------------- */
+.soft-cta{text-align:center;padding:130px 0}
+.soft-cta .divider{width:1px;height:60px;background:linear-gradient(var(--sage),transparent);margin:0 auto 30px}
+.soft-cta h2{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(34px,5vw,56px);margin:0 0 18px}
+.soft-cta p{color:var(--muted);font-size:14px;margin:0 auto 34px;max-width:520px}
+
+/* --------------------------------------------------------------------------
+   Page hero (inner pages)
+   -------------------------------------------------------------------------- */
+.page-hero{position:relative;padding:200px 0 100px;text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.page-hero-media{position:absolute;inset:0;z-index:0}
+.page-hero-media img{width:100%;height:100%;object-fit:cover;filter:brightness(.4) saturate(.65) hue-rotate(16deg)}
+.page-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,17,14,.6),rgba(8,17,14,.92)),radial-gradient(ellipse at center,transparent,rgba(8,17,14,.6))}
+.page-hero-inner{position:relative;z-index:1}
+.crumb{font-size:10px;letter-spacing:.32em;color:var(--sage);text-transform:uppercase}
+.page-hero h1{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(46px,8vw,88px);margin:18px 0 14px;line-height:1.05}
+.page-hero p{color:var(--muted);font-size:14px;letter-spacing:.1em;max-width:620px;margin:0 auto}
+.page-hero .rule-sage{margin:24px auto 0}
+
+/* --------------------------------------------------------------------------
+   Form / booking
+   -------------------------------------------------------------------------- */
+.form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.booking-aside{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;padding:40px}
+.booking-aside h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:28px;margin:0 0 18px}
+.booking-aside p{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.booking-aside .info-line{font-size:13px;color:var(--sage-2);padding:10px 0;border-bottom:1px solid var(--line-soft)}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:11px;letter-spacing:.18em;color:var(--sage);margin-bottom:10px}
+.field input,.field select,.field textarea{width:100%;background:var(--surface);border:1px solid var(--line-soft);color:var(--text);padding:14px 16px;border-radius:10px;font-size:14px;font-family:inherit;outline:none;transition:border-color .3s,background .3s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sage);background:var(--surface-2)}
+.field textarea{min-height:140px;resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-note{font-size:12px;color:var(--faint);margin-top:10px}
+.form-msg{margin-top:20px;color:var(--sage-2);font-size:14px;display:none;padding:16px 20px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.form-msg.show{display:block}
+
+/* --------------------------------------------------------------------------
+   Blog / article
+   -------------------------------------------------------------------------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;transition:transform .45s ease,border-color .45s ease}
+.post:hover{transform:translateY(-6px);border-color:var(--line)}
+.post-media{aspect-ratio:16/11;overflow:hidden}
+.post-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) hue-rotate(12deg);transition:transform .8s ease}
+.post:hover .post-media img{transform:scale(1.05)}
+.post-body{padding:26px}
+.post-meta{font-size:10px;letter-spacing:.18em;color:var(--sage);margin-bottom:12px}
+.post h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;margin:0 0 12px;line-height:1.35}
+.post p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.article{max-width:800px;margin-inline:auto}
+.article-cover{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:16px;margin-bottom:48px;filter:saturate(.82) hue-rotate(12deg)}
+.article .article-meta{font-size:11px;letter-spacing:.2em;color:var(--sage);margin-bottom:16px}
+.article h1{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.2;margin:0 0 22px}
+.article .lead{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--sage-2);line-height:1.7;margin-bottom:34px}
+.article p{color:var(--muted);font-size:16px;margin:0 0 24px}
+.article h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:var(--text);margin:48px 0 18px}
+.article blockquote{border-left:1px solid var(--sage);margin:38px 0;padding:6px 0 6px 28px;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--candle)}
+.article figure{margin:36px 0}
+.article figure img{width:100%;border-radius:14px;filter:saturate(.82) hue-rotate(12deg)}
+.article figcaption{text-align:center;font-size:11px;color:var(--faint);letter-spacing:.14em;margin-top:12px}
+
+/* --------------------------------------------------------------------------
+   Process timeline
+   -------------------------------------------------------------------------- */
+.timeline{border-left:1px solid var(--line);margin-left:12px;padding-left:44px;max-width:780px}
+.step{position:relative;padding-bottom:46px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:-52px;top:8px;width:15px;height:15px;border:1px solid var(--sage);background:var(--bg);border-radius:50%}
+.step b{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--sage);font-weight:400}
+.step h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;margin:8px 0 10px}
+.step p{color:var(--muted);font-size:14px;margin:0;max-width:620px}
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.info-row{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line-soft)}
+.info-row i{color:var(--sage);font-style:normal;font-size:18px;width:26px;text-align:center;font-family:var(--serif)}
+.info-row b{display:block;font-family:var(--serif);font-style:italic;font-size:18px;font-weight:400;margin-bottom:4px}
+.info-row span{font-size:13px;color:var(--muted)}
+.map-frame{border:1px solid var(--line);border-radius:16px;min-height:380px;background:linear-gradient(135deg,var(--surface),var(--surface-2)) center/cover no-repeat;display:grid;place-items:center;color:var(--faint);font-size:12px;letter-spacing:.2em;text-align:center;padding:30px}
+.map-frame .pin{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--sage);display:block;margin-bottom:10px}
+
+/* stats */
+.stats-band{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:40px 20px;text-align:center;border-right:1px solid var(--line-soft)}
+.stat:last-child{border:0}
+.stat b{font-family:var(--serif);font-style:italic;font-size:40px;color:var(--sage);display:block;font-weight:400}
+.stat span{font-size:11px;letter-spacing:.18em;color:var(--muted)}
+
+/* --------------------------------------------------------------------------
+   Footer — serene centered, lotus ripples
+   -------------------------------------------------------------------------- */
+.site-footer{border-top:1px solid var(--line);padding:90px 0 40px;background:var(--bg-2);text-align:center}
+.footer-inner{display:flex;flex-direction:column;align-items:center}
+.lotus{position:relative;width:70px;height:70px;margin:0 auto 28px}
+.lotus span{position:absolute;border:1px solid rgba(159,201,180,.4);border-radius:50%;inset:0}
+.lotus span:nth-child(2){inset:12px;transform:scaleY(.55)}
+.lotus span:nth-child(3){inset:12px;transform:scaleX(.55)}
+.lotus span:nth-child(4){inset:26px;background:rgba(232,217,184,.5);border:0;box-shadow:0 0 24px rgba(232,217,184,.35)}
+.footer-brand .brand-en{font-size:32px}
+.footer-brand p{color:var(--muted);font-size:13px;max-width:420px;margin:18px auto 0;letter-spacing:.04em}
+.footer-hours{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin:34px 0 26px;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.footer-hours span{color:var(--sage)}
+.footer-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.footer-links a{font-size:12px;color:var(--muted);letter-spacing:.08em;transition:color .3s}
+.footer-links a:hover{color:var(--sage)}
+.socials{display:flex;gap:12px;justify-content:center;margin-bottom:34px}
+.socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--sage);font-size:12px;letter-spacing:.06em;transition:all .3s}
+.socials a:hover{background:rgba(159,201,180,.12);border-color:var(--sage)}
+.footer-bottom{border-top:1px solid var(--line-soft);padding-top:26px;font-size:11px;letter-spacing:.12em;color:var(--faint)}
+
+/* back to top */
+.to-top{position:fixed;right:24px;bottom:30px;z-index:50;width:44px;height:44px;border:1px solid var(--line);background:rgba(14,31,25,.85);backdrop-filter:blur(8px);color:var(--sage);border-radius:50%;display:none;place-items:center;font-size:17px;transition:all .3s}
+.to-top.show{display:grid}
+.to-top:hover{background:rgba(159,201,180,.15);border-color:var(--sage)}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* inner-page header offset already handled by page-hero padding */
+
+/* --------------------------------------------------------------------------
+   Responsive (primary). Extra device tuning lives in responsive.css
+   -------------------------------------------------------------------------- */
+@media(max-width:1024px){
+  .nav{gap:18px}
+  .cards,.posts,.quotes-grid{grid-template-columns:repeat(2,1fr)}
+  .form-wrap{gap:40px}
+}
+@media(max-width:860px){
+  .site-header{padding:16px 0}
+  .nav{display:none}
+  .nav-toggle{display:block}
+  body.home .site-header{bottom:18px}
+  body.home .header-inner{justify-content:center}
+  /* On small screens the home pill collapses to a single soft menu button;
+     the full 12-link menu lives in the left drawer. */
+  body.home .nav{display:none}
+  body.home .nav-toggle{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(14,31,25,.68);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);font-size:22px;position:relative;right:auto}
+  .split,.form-wrap,.contact-grid{grid-template-columns:1fr}
+  .split .split-media{min-height:360px}
+  .split.flip .split-media{order:0}
+  .split .split-content{border:1px solid var(--line-soft);border-top:0}
+  .ritual{grid-template-columns:46px 1fr auto;gap:16px}
+  .ritual-icon{display:none}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+}
+@media(max-width:600px){
+  .wrap{width:88%}
+  .section{padding:80px 0}
+  .gallery-grid{grid-template-columns:1fr}
+  .cards,.posts,.quotes-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr;gap:0}
+  .ritual{grid-template-columns:40px 1fr;gap:12px;padding:26px 4px}
+  .ritual-price{grid-column:2;padding-top:0}
+  .faq-q{font-size:18px}
+  .faq-a p{padding-right:0}
+  .footer-hours{gap:16px}
+  .body-home .hero h1{font-size:56px}
+  .drawer{width:88%}
+  .to-top{right:16px;bottom:18px}
+}

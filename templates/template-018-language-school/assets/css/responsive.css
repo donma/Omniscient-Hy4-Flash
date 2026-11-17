@@ -1,0 +1,55 @@
+/* ==========================================================================
+   T018 Language School — responsive.css
+   桌機 4 欄 / 平板最多 2 欄 / 手機全單欄
+   ========================================================================== */
+
+@media(max-width:1100px){
+  .nav{gap:14px}
+  .nav a{font-size:13px}
+  .hero-grid{gap:34px}
+  .course-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:34px 22px}
+  .step:nth-child(2)::after{display:none}
+}
+
+@media(max-width:960px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{min-height:auto;padding:20px 0 40px}
+  .price-preview{max-width:420px}
+  .starburst{left:4%}
+  .split,.form-wrap,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:340px}
+  .price-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;gap:30px}
+  .plan-popular{transform:none}
+  .plan-popular:hover{transform:translateY(-8px)}
+  .teacher-grid,.review-grid,.posts,.feature-grid,.gallery{grid-template-columns:repeat(2,1fr)}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:repeat(2,1fr);gap:34px}
+}
+
+@media(max-width:680px){
+  .section{padding:70px 0}
+  .wrap{width:88%}
+  .hero{padding:50px 0 70px}
+  .hero h1{font-size:clamp(36px,9vw,52px)}
+  .hero-actions .btn{flex:1 1 100%}
+  .starburst{width:80px;height:80px;font-size:11px;top:-2%;left:0}
+  .speech-chip{font-size:11px;right:0}
+  .course-grid,.teacher-grid,.review-grid,.posts,.feature-grid,.gallery,.stats-band,.steps,.field-row{grid-template-columns:1fr}
+  .steps{gap:26px}
+  .step::after{display:none}
+  .step-num{width:64px;height:64px;font-size:24px}
+  .footer-top{grid-template-columns:1fr}
+  .cta-band{padding:44px 24px}
+  .article-cover{height:240px}
+  .article-img{height:240px}
+  .form-card{padding:26px 20px}
+  .enroll-band .q-bubble{font-size:24px;padding:18px 22px}
+  .section-head h2{font-size:30px}
+  .plan{padding:30px 24px}
+  .plan-price .num{font-size:42px}
+  .to-top{right:16px;bottom:16px;width:44px;height:44px}
+}

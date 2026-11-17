@@ -1,0 +1,16 @@
+{
+  "id": "template-018",
+  "name": "Language School",
+  "industryCategory": "Education",
+  "industry": ["語言學校", "教育課程", "補習班", "線上教學"],
+  "colors": ["#ffffff", "#f5f9ff", "#3b82f6", "#ffc93c", "#1e3a5f"],
+  "backgroundMode": "light",
+  "features": ["方案定價預覽 Hero", "三欄方案比較", "月繳年繳切換", "課程程度卡", "師資團隊", "學員回饋", "FAQ 手風琴", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Pricing-first 方案導向型", "bright-blue-yellow-pricing-hero", "playful-top-nav", "pricing-plan-columns", "course-level-cards", "pricing-table-cta", "playful-enroll-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

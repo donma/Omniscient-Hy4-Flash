@@ -1,0 +1,102 @@
+/* ==========================================================================
+   T016 Flower Wedding — responsive.css
+   額外裝置微調；主要 RWD 規則已含於 style.css。
+   桌機 2-3 欄 → 平板最多 2 欄 → 手機全數單欄。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .hf-1{right:3%;width:28vw}
+  .hf-2{right:29%;width:20vw}
+  .hero-card{padding:48px 42px}
+  .nav{gap:5px 16px}
+  .nav a{font-size:14px}
+}
+
+@media (max-width: 1024px){
+  .masonry{columns:2}
+  .packages,.stories,.posts,.review-grid{grid-template-columns:repeat(2,1fr)}
+  .nav a{font-size:13px}
+  .footer-top{grid-template-columns:repeat(2,1fr);gap:32px}
+}
+
+@media (max-width: 860px){
+  .site-header{padding:18px 0 14px}
+  .header-note{display:none}
+  .nav{display:none}
+  .nav-toggle{display:flex}
+  .brand{position:static;transform:none;text-align:left}
+  .brand-script{font-size:38px}
+  .brand-sub{font-size:8px}
+  .nav-cta{margin-left:auto;margin-right:54px}
+
+  .hero{min-height:auto;padding:150px 0 70px}
+  .hero-collage{position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:0 5% 30px}
+  .hero-collage .hf{position:relative;inset:auto;width:100%!important;max-width:none;height:230px}
+  .hero-collage .hf-1{height:280px}
+  .hero-collage .hf-4{display:none}
+  .hero-love{position:absolute;top:180px;right:8%;font-size:72px}
+  .hero-botanical,.hero-botanical-2{display:none}
+  .hero-panel{width:100%}
+  .hero-card{max-width:none;margin-inline:5%;padding:40px 30px}
+
+  .split,.form-wrap,.contact-grid{grid-template-columns:1fr}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:340px}
+  .split-content{padding:52px 8%}
+  .page-hero{padding:150px 0 66px}
+  .page-hero .botanical{display:none}
+}
+
+@media (max-width: 600px){
+  .wrap{width:min(90%,1280px)}
+  .section{padding:72px 0}
+  .section-head h2{font-size:32px}
+  .masonry{columns:1}
+  .masonry-item img{width:100%}
+  .packages,.stories,.posts,.review-grid{grid-template-columns:1fr}
+  .hero-collage{grid-template-columns:1fr 1fr}
+  .hero-collage .hf{height:180px}
+  .hero-collage .hf-1{height:220px}
+  .hero-script{font-size:44px}
+  .hero h1{font-size:34px}
+  .hero-desc{font-size:14px}
+  .script-link{font-size:24px}
+  .page-hero h1{font-size:40px}
+  .page-hero .ph-script{font-size:34px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  .footer-top{grid-template-columns:1fr;text-align:center;gap:28px}
+  .footer-col ul{justify-content:center}
+  .inquiry-band .wrap{flex-direction:column;align-items:flex-start;gap:18px;padding-block:50px}
+  .timeline{padding-left:34px}
+  .step::before{left:-49px}
+  .faq-q{font-size:18px}
+  .quote{font-size:24px}
+  .drawer{width:88%}
+}
+
+@media (max-width: 420px){
+  .brand-script{font-size:34px}
+  .brand-sub{letter-spacing:.32em;font-size:7px}
+  .nav-cta{font-size:11px;margin-right:50px}
+  .hero-card{padding:32px 22px}
+  .hero h1{font-size:30px}
+  .package-card{padding:38px 22px 28px}
+  .article p{font-size:15px}
+  .article blockquote{font-size:19px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  img{transition:none}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

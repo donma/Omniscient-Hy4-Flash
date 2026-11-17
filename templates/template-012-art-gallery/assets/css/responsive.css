@@ -1,0 +1,43 @@
+/* ==========================================================================
+   T012 Art Gallery — responsive.css
+   額外裝置微調；主要左側導覽 collapsing 規則已內含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1180px)}
+  .plate-grid{gap:26px 20px}
+  .quote-grid{gap:18px}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.8}
+  .section-head h2{font-size:32px}
+  .hero-exhibition{padding-top:26px}
+  .hero-frame{padding:6px}
+  .hero-frame img{height:340px}
+  .hero-frame .frame-plate{left:16px;bottom:16px;font-size:9px}
+  .hero-plate{padding-top:30px}
+  .curator-note{font-size:13px}
+  .faq-q{font-size:19px}
+  .article p{font-size:15px}
+  .article blockquote{font-size:19px}
+  .drawer{width:min(88%,320px)}
+  .topbar{padding:0 14px}
+}
+
+@media (max-width: 480px){
+  .plate-meta{font-size:10px;gap:10px;flex-wrap:wrap}
+  .hero-plate h1{font-size:46px}
+  .programme-title h3{font-size:22px}
+  .cap h3{font-size:21px}
+  .btn{padding:12px 18px;font-size:11px}
+  .thin-link{font-size:11px}
+  .footer-brand b{font-size:20px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .drawer,.overlay,.faq-a,.to-top{transition:none}
+}

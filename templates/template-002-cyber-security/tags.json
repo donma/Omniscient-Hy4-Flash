@@ -1,0 +1,16 @@
+{
+  "id": "template-002",
+  "name": "Cyber Security",
+  "industryCategory": "資訊安全",
+  "industry": ["資訊安全", "科技商務", "資安託管", "企業服務"],
+  "colors": ["#070b14", "#0e1524", "#38d6ff", "#ffb454", "#3ddc97"],
+  "backgroundMode": "dark",
+  "features": ["終端機儀表板 Hero", "即時威脅情資可視化", "六大解決方案磁磚", "數據案例卡片", "表單假送出", "強 SEO", "圖片豐富", "行動版右側抽屜", "FAQ 手風琴", "模擬即時日誌"],
+  "layout": ["dashboard-terminal-hero", "left-logo-right-pill-nav", "3x2 solution tiles", "case-study-data-cards", "columned-dense-tech-footer", "sticky-demo-banner"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   T002 Cyber Security — Responsive rules
+   Desktop 2-4 columns, tablet max 2, mobile all single column.
+   ========================================================================== */
+
+@media(max-width:1200px){
+  .nav a{padding:7px 6px;font-size:11px}
+  .hero{gap:36px}
+  .data-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:1024px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .hero{grid-template-columns:1fr;padding:56px min(6%,24px) 72px}
+  .console{max-width:680px}
+  .threat-grid{grid-template-columns:1fr}
+  .solutions-grid,.cases-grid,.reviews-grid,.posts{grid-template-columns:repeat(2,1fr)}
+  .page-hero-inner{grid-template-columns:1fr;min-height:auto}
+  .page-hero-visual{min-height:220px}
+}
+
+@media(max-width:860px){
+  .feature-row{grid-template-columns:1fr;gap:22px}
+  .feature-row.flip .fr-media{order:0}
+  .form-wrap,.contact-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:repeat(2,1fr);gap:30px}
+  .milestones{grid-template-columns:repeat(2,1fr)}
+  .milestone:nth-child(2){border-right:0}
+  .cert-list{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:640px){
+  body{font-size:14px}
+  .section{padding:70px 0}
+  .hero{padding:44px min(6%,24px) 60px;min-height:auto}
+  .hero h1{font-size:clamp(34px,9vw,50px)}
+  .hero-desc{font-size:14px}
+  .hero-actions .btn{flex:1 1 100%}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-stat:nth-child(2){border-right:0}
+  .hero-stat:nth-child(-n+2){border-bottom:1px solid var(--line-soft)}
+  .console-body{grid-template-columns:1fr}
+  .console-map{min-height:200px;border-right:0;border-bottom:1px solid var(--line)}
+  .console-logs{min-height:180px}
+  .solutions-grid,.cases-grid,.reviews-grid,.posts,.data-grid,.team-grid,.cert-list,.threat-list{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .trust-inner{justify-content:center;text-align:center}
+  .badge-row{justify-content:center}
+  .sticky-inner{flex-direction:column;align-items:stretch;gap:8px;text-align:center}
+  .sticky-inner .btn{width:100%}
+  .section-head.center{text-align:left}
+  .section-head.center .eyebrow::before{display:inline-flex}
+  .callout{padding:26px}
+  .to-top{bottom:96px;right:14px}
+  .article .lead{font-size:16px}
+  .data-table{font-size:12px}
+  .data-table th,.data-table td{padding:10px}
+}

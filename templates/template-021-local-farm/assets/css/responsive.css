@@ -1,0 +1,65 @@
+/* ==========================================================================
+   T021 Local Farm — responsive.css
+   桌機 2-4 欄 · 平板最多 2 欄 · 手機全數單欄
+   ========================================================================== */
+
+@media(max-width:1100px){
+  .nav{gap:16px}
+  .nav a{font-size:12px}
+  .season-row{grid-template-columns:100px 130px 1fr 150px;gap:18px}
+  .season-thumb{width:150px;height:110px}
+  .split-story{gap:44px}
+  .footer-top{grid-template-columns:1.3fr 1fr 1fr}
+}
+
+@media(max-width:900px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .site-header{padding:16px 0}
+  .split-story,.form-wrap,.contact-grid,.visit-grid{grid-template-columns:1fr}
+  .split-story.flip .story-copy,.split-story.flip .story-figure{order:0}
+  .story-figure{height:400px}
+  .farmers{grid-template-columns:repeat(2,1fr)}
+  .season-cards{grid-template-columns:repeat(2,1fr)}
+  .testimonials{grid-template-columns:repeat(2,1fr)}
+  .posts{grid-template-columns:repeat(2,1fr)}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .footer-top{grid-template-columns:1fr 1fr;gap:34px}
+  .visit-info{margin-top:10px}
+}
+
+@media(max-width:680px){
+  body{font-size:14px}
+  .section,.chapter{padding:70px 0}
+  .chapter-watermark{font-size:150px;top:14px}
+  .hero-inner{padding:130px 0 150px}
+  .hero h1{font-size:clamp(40px,10vw,58px)}
+  .hero-scroll{font-size:10px;letter-spacing:.16em}
+  .farmers,.season-cards,.testimonials,.posts,.gallery{grid-template-columns:1fr}
+  .gallery figure:nth-child(n){grid-column:span 1;height:240px}
+  .season-row{grid-template-columns:1fr;gap:14px;padding:26px 8px;text-align:center;justify-items:center}
+  .season-badge small{margin-top:4px}
+  .season-thumb{width:100%;max-width:280px;height:170px}
+  .field-row{grid-template-columns:1fr;gap:0}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .stat b{font-size:34px}
+  .footer-top{grid-template-columns:1fr}
+  .brand-text b{font-size:16px}
+  .brand-mark{width:28px;height:28px}
+  .faq-q{font-size:17px}
+  .timeline{margin-left:8px;padding-left:38px}
+  .step::before{left:-54px;width:32px;height:32px;font-size:12px}
+  .article h2{font-size:25px}
+  .article p{font-size:15px}
+  .visit-info .vrow{font-size:13px}
+  .chapter-cta .hint{width:100%}
+  .page-hero{padding:140px 0 64px}
+}
+
+@media(max-width:420px){
+  .hero-actions .btn,.chapter-cta .btn{width:100%;justify-content:center}
+  .hero-kicker{letter-spacing:.24em;font-size:11px}
+  .season-badge{font-size:32px}
+  .to-top{right:14px;bottom:18px;width:40px;height:40px}
+}

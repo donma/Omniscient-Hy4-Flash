@@ -1,0 +1,16 @@
+{
+  "id": "template-006",
+  "name": "AI SaaS",
+  "industryCategory": "科技 / SaaS",
+  "industry": ["AI 軟體", "科技商務", "新創", "SaaS", "生成式智慧"],
+  "colors": ["深紫 #8b5cf6", "電光藍 #38bdf8", "深色 #090a12", "玻璃質感"],
+  "backgroundMode": "dark",
+  "features": ["Bento Grid", "玻璃質感", "漂浮導覽列", "CSS 產品 UI 模型", "CSS 迷你圖表", "漂浮漸層光球", "FAQ 手風琴", "表單假送出", "強 SEO", "圖片豐富", "示範影片 Modal"],
+  "layout": ["gradient-glow-bento-hero", "floating-pill-nav", "bento-feature-tiles", "logo-wall-case-bento", "gradient-glow-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

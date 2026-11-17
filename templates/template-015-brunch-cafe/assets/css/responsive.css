@@ -1,0 +1,56 @@
+/* ==========================================================================
+   T015 Brunch Cafe — responsive.css
+   額外裝置微調；主要 RWD 規則已內含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(93%,1240px)}
+  .cover-copy h1{font-size:clamp(40px,5.2vw,70px)}
+  .card-body{padding:20px}
+}
+
+@media (max-width: 900px){
+  body{line-height:1.78}
+  .section-head h2{font-size:34px}
+  .feature-copy{padding:48px 8%}
+  .featured-dish .fd-copy{padding:40px 7%}
+  .menu-spread .spread-col{padding:42px 7%}
+  .article .lead{font-size:20px}
+  .article blockquote{font-size:21px}
+  .article p{font-size:15px}
+  .page-hero h1{font-size:clamp(38px,10vw,64px)}
+}
+
+@media (max-width: 600px){
+  .cover-copy h1{font-size:clamp(38px,11vw,58px)}
+  .cover-script{font-size:18px}
+  .cover-badge{width:112px;height:112px;right:16px;top:-38px}
+  .cover-badge b{font-size:13px}
+  .feature-media{min-height:280px}
+  .featured-dish .fd-media{min-height:260px}
+  .btn{width:100%;justify-content:center}
+  .inline-link{font-size:15px}
+  .signature{font-size:20px}
+  .review{padding:26px}
+  .review q{font-size:19px}
+  .step::before{left:-57px;width:46px;height:46px;font-size:18px}
+  .timeline{padding-left:30px;margin-left:14px}
+  .map-frame{min-height:260px}
+  .site-footer .colophon-top{gap:30px}
+}
+
+@media (max-width: 420px){
+  .masthead-name{font-size:29px;letter-spacing:.06em}
+  .masthead-sub{font-size:8px;letter-spacing:.34em}
+  .drawer{width:92%}
+  .stat b{font-size:34px}
+  .faq-q{font-size:15px}
+  .article-head h1{font-size:32px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .essay-item img,.card-media img{transition:none}
+}

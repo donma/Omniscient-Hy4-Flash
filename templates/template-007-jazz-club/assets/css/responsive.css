@@ -1,0 +1,108 @@
+/* ==========================================================================
+   T007 Jazz Club — responsive.css
+   裝置微調；主要 RWD 規則亦見 style.css。
+   桌機 2-4 欄 / 平板最多 2 欄 / 手機全單欄。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .nav{gap:14px}
+  .nav a{font-size:11px;letter-spacing:.1em}
+  .posters{grid-auto-rows:220px}
+}
+
+@media (max-width: 980px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .hero-inner{grid-template-columns:1fr;gap:20px;text-align:center;padding-top:70px}
+  .hero-left{min-height:300px}
+  .hero-vinyl{width:min(260px,64vw)}
+  .hero-right{max-width:640px;margin-inline:auto}
+  .hero-actions{justify-content:center}
+  .hero-stamp{display:none}
+  .collage{grid-template-columns:1fr 1fr;grid-template-rows:220px 200px}
+  .collage figure:first-child{grid-row:1/3}
+  .posters{grid-template-columns:1fr 1fr;grid-auto-rows:230px}
+  .poster:nth-child(1),.poster:nth-child(5){grid-column:span 2}
+  .poster:nth-child(1){grid-row:span 1}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .pstep:not(:last-child)::after{display:none}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.8}
+  .section{padding:74px 0}
+  .section-head h2{font-size:32px}
+  .split,.form-wrap,.contact-grid{grid-template-columns:1fr}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:300px}
+  .split-content{padding:56px 8%}
+  .menu-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line-soft)}
+  .review-grid,.posts{grid-template-columns:1fr}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{border-left:0;border-top:3px dashed rgba(239,226,200,.5)}
+  .ticket-stub::before,.ticket-stub::after{top:auto;bottom:-12px;left:-12px}
+  .ticket-main{padding:34px 26px}
+  .ticket-stub{padding:30px 24px}
+  .page-hero{padding:130px 0 60px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-vinyl-wrap{grid-column:1/-1}
+  .article p{font-size:15px}
+  .show{grid-template-columns:70px 1fr;gap:18px}
+  .show-date{width:70px}
+  .show-date b{font-size:28px}
+  .listen blockquote{font-size:28px}
+}
+
+@media (max-width: 560px){
+  .wrap{width:min(92%,1280px)}
+  .hero-inner{padding:56px 0 96px}
+  .hero h1{font-size:clamp(38px,11vw,58px)}
+  .hero-vinyl{width:min(220px,62vw)}
+  .hero-wordmark{font-size:clamp(28px,9vw,42px)}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .marquee-track span{font-size:12px;padding:0 18px}
+  .collage{grid-template-columns:1fr;grid-template-rows:repeat(4,200px)}
+  .collage figure:first-child{grid-row:auto}
+  .posters{grid-template-columns:1fr;grid-auto-rows:240px}
+  .poster:nth-child(1),.poster:nth-child(5){grid-column:span 1;grid-row:span 1}
+  .poster:nth-child(1) h3{font-size:24px}
+  .process-steps{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .show{grid-template-columns:56px 1fr;gap:12px}
+  .show-date{width:56px;padding:10px 2px}
+  .show-date b{font-size:24px}
+  .show-body{padding:18px}
+  .show-vinyl-icon{width:40px;height:40px}
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-vinyl-wrap{grid-column:auto}
+  .faq-q{font-size:16px}
+  .article h1{font-size:30px}
+}
+
+@media (max-width: 400px){
+  .brand b{font-size:16px}
+  .brand span{font-size:8px;letter-spacing:.26em}
+  .brand .brand-vinyl{width:28px;height:28px}
+  .ticket-main h2{font-size:26px}
+  .stat b{font-size:34px}
+}
+
+/* 減少動態效果偏好 */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .vinyl.spin,.marquee-track,.on-air .dot{animation:none}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

@@ -1,0 +1,103 @@
+/* ==========================================================================
+   T023 Coworking Space — responsive.css
+   裝置斷點微調。桌機多欄 Bento → 平板最多兩欄 → 手機全數單欄。
+   ========================================================================== */
+
+@media (max-width: 1180px){
+  .wrap{width:min(93%,1280px)}
+  .nav{gap:11px}
+  .nav a{font-size:12px}
+  .header-inner{gap:18px}
+  .membership-bento{grid-template-columns:repeat(2,1fr)}
+  .plan--featured{grid-column:span 2;grid-row:auto}
+  .amenities-bento{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1.3fr 1fr 1fr;gap:34px}
+  .newsletter{grid-column:1/-1;max-width:460px}
+}
+
+@media (max-width: 1024px){
+  .nav{display:none}
+  .nav-toggle{display:flex}
+  .header-actions{margin-left:auto}
+  .hero-bento{grid-template-columns:repeat(2,1fr)}
+  .ht-photo{grid-column:1/3;grid-row:auto;min-height:360px}
+  .ht-headline{grid-column:1/3;grid-row:auto}
+  .ht-stat,.ht-feature{grid-column:span 1;grid-row:auto}
+  .ht-location{grid-column:1;grid-row:auto}
+  .ht-quote{grid-column:2;grid-row:auto}
+  .ht-cta{grid-column:1/3;grid-row:auto}
+  .space-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:210px}
+  .space-tile--big{grid-column:span 2;grid-row:span 2}
+  .space-tile--wide{grid-column:span 2}
+  .space-tile--tall{grid-row:span 2}
+  .tour-cta{grid-template-columns:1fr}
+  .tour-aside{padding:36px 40px}
+  .page-hero-inner{grid-template-columns:1fr;gap:32px}
+  .page-hero-media{max-width:560px}
+  .posts,.events-grid,.testi-grid,.values-grid{grid-template-columns:repeat(2,1fr)}
+  .form-wrap,.contact-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width: 760px){
+  body{font-size:14.5px}
+  .section{padding:76px 0}
+  .section.tight{padding:62px 0}
+  .section-head{margin-bottom:36px}
+  .section-head h2{font-size:30px}
+  .brand-text{font-size:20px}
+  .hero{padding:24px 0 72px}
+  .hero-bento{grid-template-columns:1fr;gap:12px}
+  .ht-photo,.ht-headline,.ht-stat,.ht-feature,.ht-location,.ht-quote,.ht-cta{grid-column:1/-1;grid-row:auto}
+  .ht-photo{min-height:300px}
+  .ht-headline{padding:28px}
+  .ht-headline h1{font-size:38px}
+  .ht-cta{padding:24px}
+  .stats-band{grid-template-columns:1fr 1fr;gap:12px}
+  .stat{padding:24px 20px}
+  .membership-bento{grid-template-columns:1fr;gap:12px}
+  .plan--featured{grid-column:auto}
+  .space-bento{grid-template-columns:1fr;grid-auto-rows:230px;gap:12px}
+  .space-tile--big,.space-tile--wide,.space-tile--tall{grid-column:auto;grid-row:auto}
+  .amenities-bento,.posts,.events-grid,.testi-grid,.values-grid{grid-template-columns:1fr;gap:12px}
+  .timeline::before{left:23px}
+  .step{grid-template-columns:48px 1fr;gap:16px;padding-bottom:24px}
+  .step-num{width:48px;height:48px;font-size:15px;border-radius:13px}
+  .step-body{padding:22px}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .field.full{grid-column:auto}
+  .form-side,.form-card{padding:28px}
+  .contact-info,.map-frame{padding:26px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1/-1}
+  .newsletter{grid-column:1/-1;max-width:none}
+  .article h1{font-size:32px}
+  .article-cover{aspect-ratio:16/9}
+  .page-hero{padding:56px 0 48px}
+  .page-hero h1{font-size:36px}
+}
+
+@media (max-width: 480px){
+  .wrap{width:90%}
+  .header-inner{height:66px;gap:12px}
+  .brand-text{font-size:18px}
+  .brand-sub{font-size:8px;letter-spacing:.22em}
+  .btn-sm{padding:9px 13px;font-size:12px}
+  .header-actions .btn-sm .arrow{display:none}
+  .hero-top{gap:10px}
+  .hero-meta{width:100%;gap:12px}
+  .ht-headline h1{font-size:33px}
+  .ht-stat b{font-size:44px}
+  .testi .quote{font-size:14px}
+  .faq-q{font-size:14px;padding:18px}
+  .footer-top{grid-template-columns:1fr}
+  .drawer{width:90%}
+  .to-top{right:14px;bottom:16px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .space-tile:hover img,.event-card:hover .event-media img,.post:hover .post-media img{transform:none}
+}

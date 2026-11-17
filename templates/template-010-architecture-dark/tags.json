@@ -1,0 +1,16 @@
+{
+  "id": "template-010",
+  "name": "Architecture Dark",
+  "industryCategory": "建築與空間設計",
+  "industry": ["建築事務所", "空間設計", "室內設計", "都市規劃"],
+  "colors": ["#0b0b0c", "#1a1a1c", "#9aa0a6", "#ff6b35", "#f2f3f4"],
+  "backgroundMode": "dark",
+  "features": ["案例索引 Hero", "編號導覽", "右側手機抽屉", "FAQ 手風琴", "表單假送出", "灰階高對比圖片", "十字準星符號", "強 SEO / OG / Schema", "圖片豐富"],
+  "layout": ["Case Study Index 案例索引型", "index-list-architecture-hero", "numbered-top-nav", "numbered-case-index-list", "discipline-list", "architectural-grid-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

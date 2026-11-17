@@ -1,0 +1,52 @@
+/* ==========================================================================
+   T020 Pet Clinic — responsive.css
+   額外裝置微調；主要 RWD 規則已內含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1240px)}
+  .hero-panel{padding:70px 6% 60px}
+  .care-cards,.posts,.testimonials{gap:20px}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.8}
+  .section-head h2{font-size:30px}
+  .page-hero{padding:60px 0 46px}
+  .hero h1{font-size:clamp(38px,10vw,58px)}
+  .hero-desc{font-size:15px}
+  .service-name{font-size:25px}
+  .service-row-body{padding:30px 8%}
+  .stat b{font-size:32px}
+  .article p{font-size:15px}
+  .article blockquote{font-size:17px}
+  .timeline{padding-left:50px}
+  .timeline::before{left:17px}
+  .step::before{left:-42px;width:18px;height:18px}
+}
+
+@media (max-width: 480px){
+  .brand-name{font-size:18px}
+  .brand-sub{font-size:8px;letter-spacing:.2em}
+  .brand-mark{width:38px;height:38px;font-size:19px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .hero-trust{gap:16px}
+  .hero-trust .trust-item b{font-size:23px}
+  .cta-band .cta-actions{flex-direction:column}
+  .cta-band .cta-actions .btn{width:100%}
+  .faq-q{font-size:15px;padding:18px 16px}
+  .faq-a p{padding:0 16px 18px}
+  .drawer{width:90%}
+  .floating-card .status-dot{width:11px;height:11px}
+  .floating-card b{font-size:14px}
+  .paw-badge{width:56px;height:56px;font-size:24px}
+  .paw-badge small{font-size:8px;padding:2px 8px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms !important}
+}

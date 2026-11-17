@@ -1,0 +1,16 @@
+{
+  "id": "template-015",
+  "name": "Brunch Cafe",
+  "industryCategory": "餐飲",
+  "industry": ["早午餐", "咖啡館", "餐飲甜點", "輕食"],
+  "colors": ["奶油白", "暖橙", "深墨", "米黃"],
+  "backgroundMode": "light",
+  "features": ["雜誌封面 Hero", "編輯式導覽", "照片隨筆", "食譜感菜單跨頁", "首字放大", "圓形徽章", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Magazine 雜誌式首頁", "menu-feature-spread", "magazine-editorial-grid", "magazine-colophon-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

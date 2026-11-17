@@ -1,0 +1,326 @@
+/* ==========================================================================
+   T012 Art Gallery — "GALLERY NO.9 九號藝廊"
+   Moody dark gallery · persistent left rail · museum plate captions.
+   Signature: a FIXED 92px left rail (vertical wordmark + numbered index +
+   OPEN hours) with all content offset by margin-left:92px. NO gold, NO neon,
+   NO gradients — only thin frame lines, off-white & muted terracotta.
+   ========================================================================== */
+
+:root{
+  --bg:#111111;
+  --surface:#1c1c1c;
+  --surface-2:#232323;
+  --off:#efede8;          /* off-white */
+  --terra:#c4704a;        /* muted terracotta */
+  --terra-dim:#8a4f34;
+  --muted:#a09c95;
+  --faint:#6e6a63;
+  --line:rgba(239,237,232,.16);
+  --line-soft:rgba(239,237,232,.08);
+  --serif:"Cormorant Garamond","Noto Sans TC",Georgia,serif;
+  --sans:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --rail:92px;
+  --topbar:56px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  overflow-x:hidden;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--off);font-family:var(--sans);line-height:1.85;font-weight:300;-webkit-font-smoothing:antialiased;letter-spacing:.02em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+figure{margin:0}
+
+/* ---------- Helpers ---------- */
+.wrap{width:min(90%,1180px);margin-inline:auto}
+.narrow{width:min(90%,820px);margin-inline:auto}
+.serif{font-family:var(--serif)}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.faint{color:var(--faint)}
+.terra{color:var(--terra)}
+.tc{text-align:center}
+.section{padding:96px 0;position:relative}
+.section-tint{background:var(--surface)}
+.section-head{max-width:640px;margin-bottom:48px}
+.section-head.center{margin-inline:auto;text-align:center}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.28em;color:var(--terra);text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--terra)}
+.section-head.center .eyebrow::before{display:none}
+.section-head h2{font-family:var(--serif);font-size:clamp(34px,5vw,56px);font-weight:500;line-height:1.15;margin:16px 0 14px;letter-spacing:.02em}
+.section-head h2 em{font-style:italic;color:var(--terra)}
+.section-head p{color:var(--muted);font-size:14px;margin:0}
+.rule{border:0;border-top:1px solid var(--line);margin:32px 0}
+
+/* ---------- Thin link (CTA motif) ---------- */
+.thin-link{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.16em;color:var(--off);border-bottom:1px solid var(--terra);padding-bottom:6px;transition:color .25s,gap .25s}
+.thin-link:hover{color:var(--terra);gap:14px}
+.thin-link.terra{color:var(--terra)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;font-size:12px;letter-spacing:.16em;border:1px solid transparent;transition:all .25s;white-space:nowrap}
+.btn-solid{background:var(--off);color:var(--bg)}
+.btn-solid:hover{background:var(--terra);color:var(--off)}
+.btn-outline{border-color:var(--line);color:var(--off)}
+.btn-outline:hover{border-color:var(--terra);color:var(--terra)}
+.btn-sm{padding:9px 16px;font-size:11px}
+
+/* ==========================================================================
+   FIXED LEFT RAIL — the signature of this template
+   ========================================================================== */
+.rail{position:fixed;top:0;left:0;bottom:0;width:var(--rail);z-index:60;background:var(--bg);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center}
+.rail-mark{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--serif);font-size:14px;letter-spacing:.34em;color:var(--off);width:100%;text-align:center;padding:24px 0 18px;border-bottom:1px solid var(--line);white-space:nowrap;transition:color .25s}
+.rail-mark:hover{color:var(--terra)}
+.rail-nav{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;overflow-y:auto;padding:12px 0;scrollbar-width:none}
+.rail-nav::-webkit-scrollbar{display:none}
+.rail-nav a{display:flex;flex-direction:column;align-items:center;gap:1px;width:100%;padding:4px 0;transition:background .2s}
+.rail-nav .rn{font-family:var(--mono);font-size:8px;color:var(--faint);letter-spacing:.04em;line-height:1.2}
+.rail-nav .rl{font-size:10px;color:var(--muted);letter-spacing:.06em;line-height:1.3}
+.rail-nav a:hover .rl,.rail-nav a.active .rl{color:var(--terra)}
+.rail-nav a.active .rn{color:var(--terra)}
+.rail-nav a.active{background:rgba(196,112,74,.08)}
+.rail-cta{writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.2em;color:var(--terra);width:100%;text-align:center;padding:14px 0;border-top:1px solid var(--line);transition:color .25s,background .25s}
+.rail-cta:hover{background:rgba(196,112,74,.08);color:var(--off)}
+.rail-hours{font-family:var(--mono);font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:center;line-height:1.8;width:100%;padding:12px 0 16px;border-top:1px solid var(--line)}
+.rail-hours b{display:block;color:var(--off);font-weight:400;font-size:8px}
+
+/* ---------- Top bar (within offset content) ---------- */
+.topbar{position:fixed;top:0;left:var(--rail);right:0;height:var(--topbar);z-index:50;background:rgba(17,17,17,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px}
+.topbar-loc{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--faint)}
+.topbar-right{display:flex;align-items:center;gap:22px}
+.lang{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--faint)}
+.lang b{color:var(--off);font-weight:400}
+.lang .sep{color:var(--terra);margin:0 6px}
+.menu-toggle{display:none;background:none;border:0;color:var(--off);font-size:12px;letter-spacing:.12em;padding:6px 0}
+.mobile-brand{display:none;font-family:var(--serif);font-size:16px;letter-spacing:.16em}
+
+/* ---------- Drawer (LEFT) + overlay ---------- */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;bottom:0;width:min(84%,340px);background:var(--surface);border-right:1px solid var(--line);z-index:90;transform:translateX(-100%);transition:transform .35s ease;padding:62px 0 28px;overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.drawer-close{position:absolute;top:16px;left:20px;background:none;border:0;color:var(--off);font-size:28px;line-height:1}
+.drawer-kicker{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.26em;color:var(--terra);padding:0 26px 16px}
+.drawer nav a{display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:18px;color:var(--off);padding:11px 26px;border-bottom:1px solid var(--line-soft);transition:color .2s}
+.drawer nav a i{font-family:var(--mono);font-style:normal;font-size:10px;color:var(--terra)}
+.drawer nav a:hover,.drawer nav a.active{color:var(--terra)}
+.drawer-foot{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--faint);line-height:2;padding:24px 26px 0}
+
+/* ---------- Page offset ---------- */
+.page{margin-left:var(--rail);padding-top:var(--topbar);min-height:100vh}
+
+/* ==========================================================================
+   HERO — left-rail-exhibition-hero (image + museum plate below)
+   ========================================================================== */
+.hero-exhibition{padding:44px 0 0}
+.hero-wrap{width:min(92%,1180px);margin-inline:auto}
+.hero-frame{position:relative;border:1px solid var(--line);padding:10px;background:var(--surface)}
+.hero-frame img{width:100%;height:clamp(360px,56vh,640px);object-fit:cover;filter:saturate(.7) contrast(1.03) brightness(.9)}
+.hero-frame .frame-plate{position:absolute;left:26px;bottom:26px;background:rgba(17,17,17,.82);backdrop-filter:blur(4px);border:1px solid var(--line);padding:8px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--off)}
+.hero-plate{max-width:780px;padding:40px 0 30px;border-bottom:1px solid var(--line)}
+.plate-meta{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--terra);text-transform:uppercase}
+.plate-meta .dot{color:var(--faint)}
+.hero-plate h1{font-family:var(--serif);font-size:clamp(52px,9vw,104px);font-weight:500;line-height:.98;margin:20px 0 8px;letter-spacing:.04em}
+.hero-en{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--muted);margin:0 0 24px}
+.curator-note{font-size:14px;color:var(--muted);line-height:1.95;max-width:640px;margin:0 0 28px}
+.hero-side{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.hero-scroll{font-family:var(--mono);font-size:9px;letter-spacing:.28em;color:var(--faint);padding:22px 0;writing-mode:vertical-rl}
+
+/* ==========================================================================
+   PROGRAMME LIST — exhibitions / events with dates + status badges
+   ========================================================================== */
+.programme{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.programme-item{display:grid;grid-template-columns:56px 1fr auto auto;gap:22px;align-items:center;padding:26px 6px;border-bottom:1px solid var(--line-soft);transition:background .25s}
+.programme-item:hover{background:rgba(239,237,232,.02)}
+.programme-num{font-family:var(--mono);font-size:12px;color:var(--terra);letter-spacing:.08em}
+.programme-title h3{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);font-weight:500;margin:0 0 3px}
+.programme-title .p-en{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--faint)}
+.programme-date{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
+.badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:6px 10px;border:1px solid var(--line);white-space:nowrap}
+.badge.now{color:var(--terra);border-color:var(--terra)}
+.badge.soon{color:var(--off);border-color:var(--line)}
+.badge.done{color:var(--faint)}
+
+/* ==========================================================================
+   EXHIBITION PLATE GRID — portfolio with museum labels
+   ========================================================================== */
+.plate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 26px}
+.plate-card{background:var(--surface);border:1px solid var(--line);padding:9px;transition:border-color .3s,transform .3s}
+.plate-card:hover{border-color:var(--terra);transform:translateY(-4px)}
+.plate-card .img-frame{border:1px solid var(--line-soft);overflow:hidden}
+.plate-card img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.68);transition:transform .6s}
+.plate-card:hover img{transform:scale(1.04)}
+.plate-card .cap{padding:16px 8px 8px}
+.cap-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--terra);margin-bottom:9px}
+.cap-top .yr{color:var(--faint)}
+.cap h3{font-family:var(--serif);font-size:23px;font-weight:500;margin:0 0 4px;line-height:1.1}
+.cap .artist{font-size:13px;color:var(--muted);margin:0}
+
+/* ---------- Artists ---------- */
+.artist-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.artist{border:1px solid var(--line);padding:9px;background:var(--surface)}
+.artist img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:saturate(.6) contrast(1.02)}
+.artist .a-cap{padding:14px 6px 6px;text-align:center}
+.artist .a-cap h3{font-family:var(--serif);font-size:21px;font-weight:500;margin:0 0 2px}
+.artist .a-cap span{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--terra)}
+
+/* ---------- Split (visit / about) ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.split-media{position:relative;min-height:440px;border:1px solid var(--line);padding:8px;background:var(--surface)}
+.split-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.68) brightness(.9)}
+.split.flip .split-media{order:2}
+.split-content{padding:60px 8%;display:flex;flex-direction:column;justify-content:center;background:var(--surface)}
+.split-content h2{font-family:var(--serif);font-size:clamp(32px,4vw,50px);font-weight:500;line-height:1.15;margin:16px 0 20px}
+.split-content p{color:var(--muted);font-size:14px;margin:0 0 16px}
+
+/* ---------- Info rows / map ---------- */
+.info-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.info-row .ico{font-family:var(--mono);font-size:11px;color:var(--terra);width:30px;flex:none;padding-top:3px}
+.info-row b{display:block;font-family:var(--serif);font-size:17px;font-weight:500;margin-bottom:2px}
+.info-row span{font-size:13px;color:var(--muted);line-height:1.7}
+.map-frame{border:1px solid var(--line);min-height:320px;background:var(--surface) center/cover no-repeat;display:grid;place-items:center;position:relative}
+.map-frame::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.45)}
+.map-frame span{position:relative;z-index:1;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--off)}
+.map-frame a{position:absolute;z-index:2;right:16px;bottom:16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--terra);border-bottom:1px solid var(--terra);padding-bottom:3px}
+
+/* ---------- Shop ---------- */
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.shop-item{border:1px solid var(--line);padding:9px;background:var(--surface)}
+.shop-item img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:saturate(.7)}
+.shop-item .s-cap{padding:14px 6px 6px}
+.shop-item .s-cap h3{font-family:var(--serif);font-size:19px;font-weight:500;margin:0 0 4px}
+.shop-item .s-cap .price{font-family:var(--mono);font-size:11px;color:var(--terra)}
+
+/* ---------- Testimonials ---------- */
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.quote-card{border-top:1px solid var(--terra);padding:26px 0 0}
+.quote-card .q-mark{font-family:var(--serif);font-size:48px;color:var(--terra);line-height:.6}
+.quote-card p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;color:var(--off);margin:16px 0 20px}
+.quote-card cite{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint);font-style:normal}
+
+/* ---------- FAQ accordion ---------- */
+.faq{max-width:860px;margin-inline:auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:var(--off);font-family:var(--serif);font-size:22px;padding:22px 0;line-height:1.3}
+.faq-q i{color:var(--terra);font-style:normal;font-size:24px;flex:none;transition:transform .3s}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{color:var(--muted);font-size:14px;margin:0 0 22px;padding-right:40px}
+
+/* ---------- Form ---------- */
+.form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.field{margin-bottom:20px}
+.field label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--terra);margin-bottom:8px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--off);padding:13px 15px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--terra)}
+.field textarea{min-height:140px;resize:vertical}
+.form-note{font-size:12px;color:var(--faint);margin-top:8px}
+.form-msg{margin-top:18px;color:var(--terra);font-size:14px;display:none;border:1px solid var(--terra);padding:14px 16px;line-height:1.7}
+.form-msg.show{display:block}
+
+/* ---------- Page hero (inner pages) ---------- */
+.page-hero{padding:78px 0 58px;border-bottom:1px solid var(--line);background:var(--surface)}
+.page-hero .wrap{display:flex;justify-content:space-between;align-items:end;gap:40px}
+.crumb{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--terra)}
+.page-hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,78px);font-weight:500;line-height:1;margin:14px 0 12px;letter-spacing:.03em}
+.page-hero .lead{color:var(--muted);font-size:14px;max-width:620px;margin:0}
+.page-hero .ph-plate{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--faint);text-align:right;line-height:2;flex:none}
+
+/* ---------- Posts / gallery journal ---------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post{border:1px solid var(--line);background:var(--surface);transition:border-color .3s,transform .3s}
+.post:hover{border-color:var(--terra);transform:translateY(-4px)}
+.post-media{padding:8px;border-bottom:1px solid var(--line)}
+.post-media img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.7)}
+.post-body{padding:22px}
+.post-meta{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--terra);margin-bottom:10px}
+.post h3{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 10px;line-height:1.3}
+.post p{font-size:13px;color:var(--muted);margin:0 0 14px}
+
+/* ---------- Article ---------- */
+.article{max-width:800px;margin-inline:auto}
+.article-cover{border:1px solid var(--line);padding:9px;background:var(--surface);margin:36px 0 44px}
+.article-cover img{width:100%;aspect-ratio:21/9;object-fit:cover;filter:saturate(.7)}
+.article h1{font-family:var(--serif);font-size:clamp(38px,5.5vw,62px);font-weight:500;line-height:1.15;margin:18px 0}
+.article .lead{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--terra);line-height:1.7;margin-bottom:32px}
+.article p{color:var(--muted);font-size:16px;margin:0 0 22px}
+.article h2{font-family:var(--serif);font-size:30px;color:var(--off);font-weight:500;margin:46px 0 16px}
+.article blockquote{border-left:2px solid var(--terra);margin:34px 0;padding:6px 0 6px 26px;font-family:var(--serif);font-style:italic;font-size:23px;color:var(--off);line-height:1.5}
+.article .cap-plate{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint);margin-top:8px}
+
+/* ---------- Stats band ---------- */
+.stats-band{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:38px 18px;text-align:center;border-right:1px solid var(--line-soft)}
+.stat:last-child{border:0}
+.stat b{font-family:var(--serif);font-size:40px;color:var(--terra);display:block;font-weight:500;line-height:1}
+.stat span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--muted)}
+
+/* ==========================================================================
+   RAIL-ALIGNED FOOTER
+   ========================================================================== */
+.site-footer{border-top:1px solid var(--line);background:var(--surface);padding:54px 0 0;margin-left:var(--rail)}
+.footer-wrap{width:min(92%,1180px);margin-inline:auto}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:46px}
+.footer-brand b{font-family:var(--serif);font-size:24px;letter-spacing:.2em;display:block;margin-bottom:12px}
+.footer-brand p{font-size:13px;color:var(--muted);max-width:260px}
+.footer-col h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--terra);margin:0 0 18px;text-transform:uppercase}
+.footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.footer-col a,.footer-col li{font-size:12px;color:var(--muted)}
+.footer-col a:hover{color:var(--terra)}
+.footer-bottom{border-top:1px solid var(--line);padding:20px 0 26px;display:flex;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint)}
+.map-link{border-bottom:1px solid var(--terra);padding-bottom:3px;color:var(--terra)}
+
+/* ---------- Back to top ---------- */
+.to-top{position:fixed;right:22px;bottom:26px;z-index:40;width:40px;height:40px;border:1px solid var(--line);background:var(--surface);color:var(--off);display:none;place-items:center;font-size:16px;transition:border-color .25s,color .25s}
+.to-top:hover{border-color:var(--terra);color:var(--terra)}
+.to-top.show{display:grid}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ==========================================================================
+   RESPONSIVE — main rules; additional fine-tuning in responsive.css
+   ========================================================================== */
+@media(max-width:1100px){
+  .plate-grid,.post-grid,.shop-grid,.artist-grid{grid-template-columns:repeat(2,1fr)}
+  .artist-grid,.shop-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .quote-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .rail{display:none}
+  .topbar{left:0;padding:0 18px}
+  .mobile-brand{display:block}
+  .topbar-loc{display:none}
+  .menu-toggle{display:block}
+  .page{margin-left:0;padding-top:var(--topbar)}
+  .site-footer{margin-left:0}
+  .hero-side{grid-template-columns:1fr}
+  .hero-scroll{display:none}
+}
+@media(max-width:680px){
+  .section{padding:70px 0}
+  .split,.form-wrap,.page-hero .wrap{grid-template-columns:1fr;flex-direction:column;align-items:stretch}
+  .split.flip .split-media{order:0}
+  .split-media{min-height:300px}
+  .split-content{padding:44px 6%}
+  .page-hero .ph-plate{text-align:left}
+  .plate-grid,.posts,.artist-grid,.shop-grid,.quote-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .programme-item{grid-template-columns:40px 1fr;gap:8px 14px}
+  .programme-date,.programme .badge{grid-column:2}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column}
+  .hero-frame img{height:300px}
+  .hero-plate h1{font-size:52px}
+}
+@media(max-width:420px){
+  .footer-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .lang{font-size:10px}
+}

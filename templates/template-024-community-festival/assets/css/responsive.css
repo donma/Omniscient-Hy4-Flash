@@ -1,0 +1,56 @@
+/* ==========================================================================
+   T024 Community Festival — responsive.css
+   額外裝置微調；主要 RWD 規則已含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(93%,1280px)}
+  .highlight-grid,.program-grid,.posts{gap:18px}
+  .hero-sticker{right:2%}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.75}
+  .brand-name b{font-size:18px}
+  .brand-name small{font-size:9px;letter-spacing:.22em}
+  .brand-mark{width:34px;height:34px;font-size:19px}
+  .section-head h2{font-size:30px}
+  .page-hero{padding:96px 0 60px}
+  .page-hero h1{font-size:clamp(34px,10vw,52px)}
+  .stat b{font-size:38px}
+  .zone-card,.vendor,.voice,.program-card,.post,.mini-card{padding-left:20px;padding-right:20px}
+  .article p{font-size:15px}
+  .ticket-ribbon-inner{gap:12px}
+  .form-card,.form-side{padding:24px}
+}
+
+@media (max-width: 480px){
+  .header-inner{min-height:64px}
+  .hero h1{font-size:clamp(42px,12.5vw,60px)}
+  .hero-kicker{font-size:12px;padding:7px 14px}
+  .hero-sticker b{font-size:21px}
+  .btn{padding:13px 22px;font-size:14px}
+  .faq-q{font-size:15px;padding:16px 18px}
+  .faq-a p{padding:0 18px 18px}
+  .drawer{width:92%}
+  .to-top{right:14px;bottom:14px;width:44px;height:44px}
+  .voice::before{font-size:56px}
+  .newsletter-form input{min-width:100%}
+  .newsletter-form button{width:100%;padding:12px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .confetti i,.hero-burst,.cta-band .burst-a,.cta-band .burst-b,.hero-emoji{animation:none}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

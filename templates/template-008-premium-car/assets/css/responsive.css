@@ -1,0 +1,63 @@
+/* ==========================================================================
+   T008 Premium Car — responsive.css
+   額外裝置微調；主要 RWD 規則已含於 style.css 末尾。
+   ========================================================================== */
+
+@media (min-width: 1600px){
+  .wrap{width:min(84%,1440px)}
+  .hero h1{font-size:132px}
+}
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1320px)}
+  .model-tabbar-inner{gap:14px}
+  .tabbar-link{display:none}
+}
+
+@media (max-width: 900px){
+  .header-inner{gap:14px}
+  .hero-grad{background:linear-gradient(90deg,rgba(10,11,13,.97) 0%,rgba(10,11,13,.82) 45%,rgba(10,11,13,.3) 100%),linear-gradient(0deg,rgba(10,11,13,.92),transparent 40%)}
+  .split-media::after,.split.flip .split-media::after{display:none}
+  .compare-table th,.compare-table td{padding:14px 16px}
+  .article p{font-size:15px}
+}
+
+@media (max-width: 640px){
+  body{font-size:14px;line-height:1.75}
+  .eyebrow{font-size:11px;letter-spacing:.24em}
+  .section-head h2{font-size:30px}
+  .hero h1{font-size:clamp(46px,14vw,64px)}
+  .hero h1 span{font-size:.58em}
+  .hero-desc{font-size:14px}
+  .hero-actions .btn{width:100%}
+  .trim-name{font-size:26px}
+  .cta-banner h2{font-size:34px}
+  .page-hero h1{font-size:clamp(40px,12vw,64px)}
+  .drawer a{font-size:18px}
+  .faq-q{font-size:15px}
+  .quote-block blockquote{font-size:24px}
+  .sticky-drive{font-size:12px}
+}
+
+@media (max-width: 380px){
+  .brand b{font-size:18px}
+  .model-switch label b{font-size:13px}
+  .model-switch label span{font-size:8px}
+  .btn{padding:13px 20px}
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+
+
+/* ---- 巡邏修正：窄螢幕內容留白，避免文字貼邊 ---- */
+@media (max-width: 640px){
+  .article, article.article, .article.section, .section.article { padding-left: 22px !important; padding-right: 22px !important; }
+  .article *, article.article * { max-width: 100%; }
+  .page-hero-inner, .hero-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  html, body { overflow-x: hidden; }
+}

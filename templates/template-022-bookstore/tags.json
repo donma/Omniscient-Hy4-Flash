@@ -1,0 +1,16 @@
+{
+  "id": "template-022",
+  "name": "Bookstore",
+  "industryCategory": "書店與閱讀",
+  "industry": ["獨立書店", "地方品牌", "文化場所", "閱讀空間"],
+  "colors": ["#f7f2e8", "#efe6d5", "#6b4f3a", "#b5654a", "#3b2f26"],
+  "backgroundMode": "light",
+  "features": ["紙感紋理", "書架式分類導覽", "手寫推薦小卡", "讀書會活動報名", "表單假送出", "FAQ 手風琴", "強 SEO", "圖片豐富"],
+  "layout": ["Knowledge Hub 知識中心", "paper-brown-knowledge-hero", "top-category-nav", "category-shelf-list", "shelf-book-grid", "paper-texture-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

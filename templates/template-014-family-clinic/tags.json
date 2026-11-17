@@ -1,0 +1,16 @@
+{
+  "id": "template-014",
+  "name": "Family Clinic",
+  "industryCategory": "診所 / 醫療",
+  "industry": ["家庭診所", "醫療照護", "美容健康", "小兒科", "健康檢查"],
+  "colors": ["clean-white", "medical-blue", "soft-mint", "deep-navy", "light-sky"],
+  "backgroundMode": "light",
+  "features": ["55/45 白藍信任分割 Hero", "懸浮門診狀態卡", "藍色十字 plus motif", "六大服務圖示卡", "醫師團隊與部門卡", "頂部掛號導覽", "藍色預約 CTA 帶", "trust-column Footer", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Split Trust 專業信任型", "clean-blue-split-trust-hero", "service-icon-cards", "department-clean-cards", "top-appointment-nav", "trust-column-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}

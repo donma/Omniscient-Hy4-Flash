@@ -1,0 +1,56 @@
+/* ==========================================================================
+   T005 Film Studio — responsive.css
+   額外裝置微調；主要 RWD 規則已內含於 style.css 末尾。
+   ========================================================================== */
+
+@media (max-width: 1200px){
+  .wrap{width:min(92%,1360px)}
+  .phase h3{font-size:18px}
+  .card-body{padding:20px}
+}
+
+@media (max-width: 900px){
+  .site-header{padding:20px 0}
+  .section-head h2{font-size:clamp(30px,6vw,46px)}
+  .page-hero{padding:150px 0 72px}
+  .hero-core{transform:none}
+  .letterbox{height:7vh;min-height:44px}
+  .rec,.frame-bl,.timecode-bl{font-size:10px}
+}
+
+@media (max-width: 768px){
+  body{line-height:1.75}
+  .brand b{font-size:17px;letter-spacing:.24em}
+  .brand span{font-size:7px;letter-spacing:.4em}
+  .hero{height:92vh;min-height:600px}
+  .hero-eyebrow{font-size:10px;letter-spacing:.3em}
+  .hero-sub{font-size:10px;letter-spacing:.24em}
+  .stat b{font-size:38px}
+  .article p{font-size:15px}
+  .article .lead{font-size:18px}
+  .masonry-item.ratio-wide img{height:200px}
+  .masonry-item.ratio-portrait img{height:360px}
+  .masonry-item.ratio-tall img{height:420px}
+  .masonry-item.ratio-square img{height:280px}
+  .showreel-btn{width:90px;height:90px}
+}
+
+@media (max-width: 480px){
+  .hero h1{font-size:clamp(46px,17vw,80px)}
+  .hero-core{padding:0 12px}
+  .play-label{font-size:9px;letter-spacing:.18em}
+  .btn{width:100%;justify-content:center}
+  .section-head h2{font-size:30px}
+  .faq-q{font-size:16px}
+  .drawer{width:88%}
+  .modal-inner{width:96%}
+  .modal-caption{left:14px;bottom:14px}
+}
+
+/* Touch / reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-media img{animation:none;transform:none}
+  .recd{animation:none}
+}

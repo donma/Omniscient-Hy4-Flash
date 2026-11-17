@@ -1,0 +1,16 @@
+{
+  "id": "template-017",
+  "name": "Organic Grocery",
+  "industryCategory": "有機商店",
+  "industry": ["有機商店", "零售商品", "農產食材", "健康飲食"],
+  "colors": ["#f8faf5", "#eef4e8", "#5b8c3e", "#c98a4b", "#2f4526"],
+  "backgroundMode": "light",
+  "features": ["商品目錄", "分類磁磚", "商品卡片網格", "產地故事", "在地配送資訊帶", "FAQ 手風琴", "表單假送出", "強 SEO", "圖片豐富"],
+  "layout": ["Product Catalog 商品目錄型", "fresh-green-catalog-hero", "top-category-nav", "category-tile-grid", "product-card-grid", "natural-value-footer"],
+  "pages": 12,
+  "hasZip": false,
+  "hasPrompt": true,
+  "hasPreview": true,
+  "imageRich": true,
+  "status": "candidate"
+}
